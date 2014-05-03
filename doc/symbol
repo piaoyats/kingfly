@@ -1,0 +1,42 @@
+understand symbol in scala
+http://my.oschina.net/joymufeng/blog/140604
+ 一、String的intern方法介绍
+
+    Oracle的开发文档上讲解的很详细：String类内部维护一个字符串池(strings pool)，当调用String的intern()方法时，如果字符串池中已经存在该字符串，则直接返回池中字符串引用，如果不存在，则将该字符串添加到池中，并返回该字符串对象的引用。执行过intern()方法的字符串，我们就说这个字符串被拘禁了(interned)。默认情况下，代码中的字符串字面量和字符串常量值都是被拘禁的，例如：
+1	String s1 = "abc";
+2	String s2 =new String("abc");
+3
+4	//返回true
+5	System.out.println(s1 == s2.intern());
+    同值字符串的intern()方法返回的引用都相同，例如：
+1	String s2 = new String("abc");
+2	String s3 = new String("abc");
+3
+4	//返回true
+5	System.out.println(s2.intern() == s3.intern());
+6	//返回false
+7	System.out.println(s2 == s3);
+
+ 二、Symbol类型的主要特点
+
+    下面接着介绍Symbol类型的两个特点。
+
+1. 节省内存
+
+    在Scala中，Symbol类型的对象是被拘禁的(interned)，任意的同名symbols都指向同一个Symbol对象，避免了因冗余而造成的内存开销。而对于String类型，只有编译时确定的字符串是被拘禁的(interned)。Scala测试代码如下：
+
+
+1	val s = 'aSymbol
+2	//输出true
+3	println( s == 'aSymbol)
+4	//输出true
+5	println( s == Symbol("aSymbol"))
+2. 快速比较
+
+    由于Symbol类型的对象是被拘禁的(interned)，任意的同名symbols都指向同一个Symbol对象，而不同名的symbols一定指向不同的Symbol对象，
+    所以symbols对象之间可以使用操作符==快速地进行相等性比较，常数时间内便可以完成，而字符串的equals方法需要逐个字符比较两个字符串，执行
+    时间取决于两个字符串的长度，速度很慢。(实际上，String.equals方法会先比较引用是否相同，但是在运行时产生    的字符串对象，引用一般是不同的)
+
+     三、Symbol类型的应用
+
+        Symbol类型一般用于快速比较，例如用于Map类型：Map<Symbol, Data>,根据一个Symbol对象，可以快速查询相应的Data, 而Map<String, Data>的查询效率则低很多。

@@ -1,0 +1,2191 @@
+/usr/local/jdk1.8.0_05/bin/java -Didea.launcher.port=7532 -Didea.launcher.bin.path=/home/tools/idea-IC-135.690/bin -Dfile.encoding=UTF-8 -classpath /usr/local/jdk1.8.0_05/jre/lib/management-agent.jar:/usr/local/jdk1.8.0_05/jre/lib/deploy.jar:/usr/local/jdk1.8.0_05/jre/lib/javaws.jar:/usr/local/jdk1.8.0_05/jre/lib/plugin.jar:/usr/local/jdk1.8.0_05/jre/lib/jce.jar:/usr/local/jdk1.8.0_05/jre/lib/jfr.jar:/usr/local/jdk1.8.0_05/jre/lib/jsse.jar:/usr/local/jdk1.8.0_05/jre/lib/jfxrt.jar:/usr/local/jdk1.8.0_05/jre/lib/rt.jar:/usr/local/jdk1.8.0_05/jre/lib/resources.jar:/usr/local/jdk1.8.0_05/jre/lib/charsets.jar:/usr/local/jdk1.8.0_05/jre/lib/ext/sunec.jar:/usr/local/jdk1.8.0_05/jre/lib/ext/localedata.jar:/usr/local/jdk1.8.0_05/jre/lib/ext/zipfs.jar:/usr/local/jdk1.8.0_05/jre/lib/ext/sunjce_provider.jar:/usr/local/jdk1.8.0_05/jre/lib/ext/sunpkcs11.jar:/usr/local/jdk1.8.0_05/jre/lib/ext/dnsns.jar:/production/sparksql:/usr/local/scala-2.10.4/lib/scala-library.jar:/usr/local/scala-2.10.4/lib/scala-swing.jar:/usr/local/scala-2.10.4/lib/scala-actors.jar:/home/lib/spark-assembly-1.0.0-SNAPSHOT-hadoop0.23.7.jar:/home/tools/idea-IC-135.690/lib/idea_rt.jar com.intellij.rt.execution.application.AppMain wfscala.RDDRelation
+14/05/03 22:16:42 INFO Utils: Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+14/05/03 22:16:42 WARN Utils: Your hostname, kf resolves to a loopback address: 127.0.1.1; using 192.168.1.106 instead (on interface eth0)
+14/05/03 22:16:42 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+14/05/03 22:16:43 INFO SecurityManager: Changing view acls to: root
+14/05/03 22:16:43 INFO SecurityManager: SecurityManager, is authentication enabled: false are ui acls enabled: false users with view permissions: Set(root)
+14/05/03 22:16:44 INFO Slf4jLogger: Slf4jLogger started
+14/05/03 22:16:44 INFO Remoting: Starting remoting
+14/05/03 22:16:45 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://spark@kf.local:50517]
+14/05/03 22:16:45 INFO Remoting: Remoting now listens on addresses: [akka.tcp://spark@kf.local:50517]
+14/05/03 22:16:45 INFO SparkEnv: Registering MapOutputTracker
+14/05/03 22:16:45 INFO SparkEnv: Registering BlockManagerMaster
+14/05/03 22:16:45 INFO DiskBlockManager: Created local directory at /tmp/spark-local-20140503221645-c079
+14/05/03 22:16:45 INFO MemoryStore: MemoryStore started with capacity 268.8 MB.
+14/05/03 22:16:45 INFO ConnectionManager: Bound socket to port 48687 with id = ConnectionManagerId(kf.local,48687)
+14/05/03 22:16:45 INFO BlockManagerMaster: Trying to register BlockManager
+14/05/03 22:16:45 INFO BlockManagerInfo: Registering block manager kf.local:48687 with 268.8 MB RAM
+14/05/03 22:16:45 INFO BlockManagerMaster: Registered BlockManager
+14/05/03 22:16:45 INFO HttpServer: Starting HTTP Server
+14/05/03 22:16:46 INFO HttpBroadcast: Broadcast server started at http://192.168.1.106:44915
+14/05/03 22:16:46 INFO HttpFileServer: HTTP File server directory is /tmp/spark-379b120b-a93b-4e61-a4fa-dfb6094907c6
+14/05/03 22:16:46 INFO HttpServer: Starting HTTP Server
+14/05/03 22:16:52 INFO SparkUI: Started SparkUI at http://kf.local:4040
+Result of SELECT *:
+14/05/03 22:16:56 INFO SparkContext: Starting job: collect at RDDRelation.scala:28
+14/05/03 22:16:57 INFO DAGScheduler: Got job 0 (collect at RDDRelation.scala:28) with 1 output partitions (allowLocal=false)
+14/05/03 22:16:57 INFO DAGScheduler: Final stage: Stage 0(collect at RDDRelation.scala:28)
+14/05/03 22:16:57 INFO DAGScheduler: Parents of final stage: List()
+14/05/03 22:16:57 INFO DAGScheduler: Missing parents: List()
+14/05/03 22:16:57 INFO DAGScheduler: Submitting Stage 0 (SchemaRDD[3] at RDD at SchemaRDD.scala:96
+== Query Plan ==
+Project [key#0:0,value#1:1]
+ ExistingRdd [key#0,value#1], MapPartitionsRDD[1] at mapPartitions at basicOperators.scala:173), which has no missing parents
+14/05/03 22:16:57 INFO DAGScheduler: Submitting 1 missing tasks from Stage 0 (SchemaRDD[3] at RDD at SchemaRDD.scala:96
+== Query Plan ==
+Project [key#0:0,value#1:1]
+ ExistingRdd [key#0,value#1], MapPartitionsRDD[1] at mapPartitions at basicOperators.scala:173)
+14/05/03 22:16:57 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks
+14/05/03 22:16:57 INFO TaskSetManager: Starting task 0.0:0 as TID 0 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:57 INFO TaskSetManager: Serialized task 0.0:0 as 3940 bytes in 5 ms
+14/05/03 22:16:57 INFO Executor: Running task ID 0
+14/05/03 22:16:57 INFO Executor: Serialized size of result for 0 is 4289
+14/05/03 22:16:57 INFO Executor: Sending result for 0 directly to driver
+14/05/03 22:16:57 INFO Executor: Finished task ID 0
+14/05/03 22:16:57 INFO DAGScheduler: Completed ResultTask(0, 0)
+14/05/03 22:16:57 INFO DAGScheduler: Stage 0 (collect at RDDRelation.scala:28) finished in 0.317 s
+14/05/03 22:16:57 INFO TaskSetManager: Finished TID 0 in 281 ms on localhost (progress: 1/1)
+14/05/03 22:16:57 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+14/05/03 22:16:57 INFO SparkContext: Job finished: collect at RDDRelation.scala:28, took 0.920508604 s
+[1,val_1]
+[2,val_2]
+[3,val_3]
+[4,val_4]
+[5,val_5]
+[6,val_6]
+[7,val_7]
+[8,val_8]
+[9,val_9]
+[10,val_10]
+[11,val_11]
+[12,val_12]
+[13,val_13]
+[14,val_14]
+[15,val_15]
+[16,val_16]
+[17,val_17]
+[18,val_18]
+[19,val_19]
+[20,val_20]
+[21,val_21]
+[22,val_22]
+[23,val_23]
+[24,val_24]
+[25,val_25]
+[26,val_26]
+[27,val_27]
+[28,val_28]
+[29,val_29]
+[30,val_30]
+[31,val_31]
+[32,val_32]
+[33,val_33]
+[34,val_34]
+[35,val_35]
+[36,val_36]
+[37,val_37]
+[38,val_38]
+[39,val_39]
+[40,val_40]
+[41,val_41]
+[42,val_42]
+[43,val_43]
+[44,val_44]
+[45,val_45]
+[46,val_46]
+[47,val_47]
+[48,val_48]
+[49,val_49]
+[50,val_50]
+[51,val_51]
+[52,val_52]
+[53,val_53]
+[54,val_54]
+[55,val_55]
+[56,val_56]
+[57,val_57]
+[58,val_58]
+[59,val_59]
+[60,val_60]
+[61,val_61]
+[62,val_62]
+[63,val_63]
+[64,val_64]
+[65,val_65]
+[66,val_66]
+[67,val_67]
+[68,val_68]
+[69,val_69]
+[70,val_70]
+[71,val_71]
+[72,val_72]
+[73,val_73]
+[74,val_74]
+[75,val_75]
+[76,val_76]
+[77,val_77]
+[78,val_78]
+[79,val_79]
+[80,val_80]
+[81,val_81]
+[82,val_82]
+[83,val_83]
+[84,val_84]
+[85,val_85]
+[86,val_86]
+[87,val_87]
+[88,val_88]
+[89,val_89]
+[90,val_90]
+[91,val_91]
+[92,val_92]
+[93,val_93]
+[94,val_94]
+[95,val_95]
+[96,val_96]
+[97,val_97]
+[98,val_98]
+[99,val_99]
+[100,val_100]
+14/05/03 22:16:58 INFO SparkContext: Starting job: collect at RDDRelation.scala:31
+14/05/03 22:16:58 INFO DAGScheduler: Registering RDD 8 (mapPartitions at Exchange.scala:69)
+14/05/03 22:16:58 INFO DAGScheduler: Got job 1 (collect at RDDRelation.scala:31) with 1 output partitions (allowLocal=false)
+14/05/03 22:16:58 INFO DAGScheduler: Final stage: Stage 1(collect at RDDRelation.scala:31)
+14/05/03 22:16:58 INFO DAGScheduler: Parents of final stage: List(Stage 2)
+14/05/03 22:16:58 INFO DAGScheduler: Missing parents: List(Stage 2)
+14/05/03 22:16:58 INFO DAGScheduler: Submitting Stage 2 (MapPartitionsRDD[8] at mapPartitions at Exchange.scala:69), which has no missing parents
+14/05/03 22:16:58 INFO DAGScheduler: Submitting 1 missing tasks from Stage 2 (MapPartitionsRDD[8] at mapPartitions at Exchange.scala:69)
+14/05/03 22:16:58 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks
+14/05/03 22:16:58 INFO TaskSetManager: Starting task 2.0:0 as TID 1 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:58 INFO TaskSetManager: Serialized task 2.0:0 as 4437 bytes in 3 ms
+14/05/03 22:16:58 INFO Executor: Running task ID 1
+14/05/03 22:16:58 INFO Executor: Serialized size of result for 1 is 778
+14/05/03 22:16:58 INFO Executor: Sending result for 1 directly to driver
+14/05/03 22:16:58 INFO Executor: Finished task ID 1
+14/05/03 22:16:58 INFO DAGScheduler: Completed ShuffleMapTask(2, 0)
+14/05/03 22:16:58 INFO DAGScheduler: Stage 2 (mapPartitions at Exchange.scala:69) finished in 0.276 s
+14/05/03 22:16:58 INFO DAGScheduler: looking for newly runnable stages
+14/05/03 22:16:58 INFO DAGScheduler: running: Set()
+14/05/03 22:16:58 INFO DAGScheduler: waiting: Set(Stage 1)
+14/05/03 22:16:58 INFO TaskSetManager: Finished TID 1 in 277 ms on localhost (progress: 1/1)
+14/05/03 22:16:58 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool
+14/05/03 22:16:58 INFO DAGScheduler: failed: Set()
+14/05/03 22:16:58 INFO DAGScheduler: Missing parents for Stage 1: List()
+14/05/03 22:16:58 INFO DAGScheduler: Submitting Stage 1 (SchemaRDD[5] at RDD at SchemaRDD.scala:96
+== Query Plan ==
+Aggregate false, [], [SUM(PartialCount#3) AS c0#2]
+ Exchange SinglePartition
+  Aggregate true, [], [COUNT(1) AS PartialCount#3]
+   Project []
+    ExistingRdd [key#0,value#1], MapPartitionsRDD[1] at mapPartitions at basicOperators.scala:173), which is now runnable
+14/05/03 22:16:58 INFO DAGScheduler: Submitting 1 missing tasks from Stage 1 (SchemaRDD[5] at RDD at SchemaRDD.scala:96
+== Query Plan ==
+Aggregate false, [], [SUM(PartialCount#3) AS c0#2]
+ Exchange SinglePartition
+  Aggregate true, [], [COUNT(1) AS PartialCount#3]
+   Project []
+    ExistingRdd [key#0,value#1], MapPartitionsRDD[1] at mapPartitions at basicOperators.scala:173)
+14/05/03 22:16:58 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks
+14/05/03 22:16:58 INFO TaskSetManager: Starting task 1.0:0 as TID 2 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:58 INFO TaskSetManager: Serialized task 1.0:0 as 2605 bytes in 0 ms
+14/05/03 22:16:58 INFO Executor: Running task ID 2
+14/05/03 22:16:58 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:58 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 1 non-empty blocks out of 1 blocks
+14/05/03 22:16:58 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 8 ms
+COUNT(*): 100
+14/05/03 22:16:58 INFO Executor: Serialized size of result for 2 is 1074
+14/05/03 22:16:58 INFO Executor: Sending result for 2 directly to driver
+14/05/03 22:16:58 INFO Executor: Finished task ID 2
+14/05/03 22:16:58 INFO DAGScheduler: Completed ResultTask(1, 0)
+14/05/03 22:16:58 INFO DAGScheduler: Stage 1 (collect at RDDRelation.scala:31) finished in 0.115 s
+14/05/03 22:16:58 INFO SparkContext: Job finished: collect at RDDRelation.scala:31, took 0.549272225 s
+14/05/03 22:16:58 INFO TaskSetManager: Finished TID 2 in 114 ms on localhost (progress: 1/1)
+14/05/03 22:16:58 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+Result of RDD.map:
+14/05/03 22:16:59 INFO SparkContext: Starting job: collect at RDDRelation.scala:39
+14/05/03 22:16:59 INFO DAGScheduler: Got job 2 (collect at RDDRelation.scala:39) with 1 output partitions (allowLocal=false)
+14/05/03 22:16:59 INFO DAGScheduler: Final stage: Stage 3(collect at RDDRelation.scala:39)
+14/05/03 22:16:59 INFO DAGScheduler: Parents of final stage: List()
+14/05/03 22:16:59 INFO DAGScheduler: Missing parents: List()
+14/05/03 22:16:59 INFO DAGScheduler: Submitting Stage 3 (MappedRDD[15] at map at RDDRelation.scala:39), which has no missing parents
+14/05/03 22:16:59 INFO DAGScheduler: Submitting 1 missing tasks from Stage 3 (MappedRDD[15] at map at RDDRelation.scala:39)
+14/05/03 22:16:59 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 3.0:0 as TID 3 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 3.0:0 as 4210 bytes in 4 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 3
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 3 is 769
+14/05/03 22:16:59 INFO Executor: Sending result for 3 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 3
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(3, 0)
+14/05/03 22:16:59 INFO DAGScheduler: Stage 3 (collect at RDDRelation.scala:39) finished in 0.014 s
+14/05/03 22:16:59 INFO SparkContext: Job finished: collect at RDDRelation.scala:39, took 0.039776777 s
+Key: 1, Value: val_1
+Key: 2, Value: val_2
+Key: 3, Value: val_3
+Key: 4, Value: val_4
+Key: 5, Value: val_5
+Key: 6, Value: val_6
+Key: 7, Value: val_7
+Key: 8, Value: val_8
+Key: 9, Value: val_9
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 3 in 19 ms on localhost (progress: 1/1)
+14/05/03 22:16:59 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool
+14/05/03 22:16:59 INFO SparkContext: Starting job: RangePartitioner at Exchange.scala:62
+14/05/03 22:16:59 INFO DAGScheduler: Got job 3 (RangePartitioner at Exchange.scala:62) with 1 output partitions (allowLocal=false)
+14/05/03 22:16:59 INFO DAGScheduler: Final stage: Stage 4(RangePartitioner at Exchange.scala:62)
+14/05/03 22:16:59 INFO DAGScheduler: Parents of final stage: List()
+14/05/03 22:16:59 INFO DAGScheduler: Missing parents: List()
+14/05/03 22:16:59 INFO DAGScheduler: Submitting Stage 4 (MapPartitionsRDD[22] at mapPartitions at Exchange.scala:58), which has no missing parents
+14/05/03 22:16:59 INFO DAGScheduler: Submitting 1 missing tasks from Stage 4 (MapPartitionsRDD[22] at mapPartitions at Exchange.scala:58)
+14/05/03 22:16:59 INFO TaskSchedulerImpl: Adding task set 4.0 with 1 tasks
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 4.0:0 as TID 4 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 4.0:0 as 4069 bytes in 2 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 4
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 4 is 597
+14/05/03 22:16:59 INFO Executor: Sending result for 4 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 4
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(4, 0)
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 4 in 14 ms on localhost (progress: 1/1)
+14/05/03 22:16:59 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool
+14/05/03 22:16:59 INFO DAGScheduler: Stage 4 (RangePartitioner at Exchange.scala:62) finished in 0.014 s
+14/05/03 22:16:59 INFO SparkContext: Job finished: RangePartitioner at Exchange.scala:62, took 0.027104986 s
+14/05/03 22:16:59 INFO SparkContext: Starting job: RangePartitioner at Exchange.scala:62
+14/05/03 22:16:59 INFO DAGScheduler: Got job 4 (RangePartitioner at Exchange.scala:62) with 1 output partitions (allowLocal=false)
+14/05/03 22:16:59 INFO DAGScheduler: Final stage: Stage 5(RangePartitioner at Exchange.scala:62)
+14/05/03 22:16:59 INFO DAGScheduler: Parents of final stage: List()
+14/05/03 22:16:59 INFO DAGScheduler: Missing parents: List()
+14/05/03 22:16:59 INFO DAGScheduler: Submitting Stage 5 (MappedRDD[24] at RangePartitioner at Exchange.scala:62), which has no missing parents
+14/05/03 22:16:59 INFO DAGScheduler: Submitting 1 missing tasks from Stage 5 (MappedRDD[24] at RangePartitioner at Exchange.scala:62)
+14/05/03 22:16:59 INFO TaskSchedulerImpl: Adding task set 5.0 with 1 tasks
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 5.0:0 as TID 5 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 5.0:0 as 4483 bytes in 2 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 5
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 5 is 892
+14/05/03 22:16:59 INFO Executor: Sending result for 5 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 5
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(5, 0)
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 5 in 33 ms on localhost (progress: 1/1)
+14/05/03 22:16:59 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool
+14/05/03 22:16:59 INFO DAGScheduler: Stage 5 (RangePartitioner at Exchange.scala:62) finished in 0.034 s
+14/05/03 22:16:59 INFO SparkContext: Job finished: RangePartitioner at Exchange.scala:62, took 0.055210439 s
+14/05/03 22:16:59 INFO SparkContext: Starting job: collect at RDDRelation.scala:42
+14/05/03 22:16:59 INFO DAGScheduler: Registering RDD 22 (mapPartitions at Exchange.scala:58)
+14/05/03 22:16:59 INFO DAGScheduler: Got job 5 (collect at RDDRelation.scala:42) with 150 output partitions (allowLocal=false)
+14/05/03 22:16:59 INFO DAGScheduler: Final stage: Stage 6(collect at RDDRelation.scala:42)
+14/05/03 22:16:59 INFO DAGScheduler: Parents of final stage: List(Stage 7)
+14/05/03 22:16:59 INFO DAGScheduler: Missing parents: List(Stage 7)
+14/05/03 22:16:59 INFO DAGScheduler: Submitting Stage 7 (MapPartitionsRDD[22] at mapPartitions at Exchange.scala:58), which has no missing parents
+14/05/03 22:16:59 INFO DAGScheduler: Submitting 1 missing tasks from Stage 7 (MapPartitionsRDD[22] at mapPartitions at Exchange.scala:58)
+14/05/03 22:16:59 INFO TaskSchedulerImpl: Adding task set 7.0 with 1 tasks
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 7.0:0 as TID 6 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 7.0:0 as 4577 bytes in 3 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 6
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 6 is 927
+14/05/03 22:16:59 INFO Executor: Sending result for 6 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 6
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 6 in 34 ms on localhost (progress: 1/1)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ShuffleMapTask(7, 0)
+14/05/03 22:16:59 INFO TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool
+14/05/03 22:16:59 INFO DAGScheduler: Stage 7 (mapPartitions at Exchange.scala:58) finished in 0.022 s
+14/05/03 22:16:59 INFO DAGScheduler: looking for newly runnable stages
+14/05/03 22:16:59 INFO DAGScheduler: running: Set()
+14/05/03 22:16:59 INFO DAGScheduler: waiting: Set(Stage 6)
+14/05/03 22:16:59 INFO DAGScheduler: failed: Set()
+14/05/03 22:16:59 INFO DAGScheduler: Missing parents for Stage 6: List()
+14/05/03 22:16:59 INFO DAGScheduler: Submitting Stage 6 (SchemaRDD[20] at RDD at SchemaRDD.scala:96
+== Query Plan ==
+Project [key#6:0]
+ Sort [value#7:1 ASC], true
+  Exchange (RangePartitioning [value#7:1 ASC], 150)
+   Filter (key#6:0 = 1)
+    ExistingRdd [key#6,value#7], MapPartitionsRDD[16] at mapPartitions at basicOperators.scala:173), which is now runnable
+14/05/03 22:16:59 INFO DAGScheduler: Submitting 150 missing tasks from Stage 6 (SchemaRDD[20] at RDD at SchemaRDD.scala:96
+== Query Plan ==
+Project [key#6:0]
+ Sort [value#7:1 ASC], true
+  Exchange (RangePartitioning [value#7:1 ASC], 150)
+   Filter (key#6:0 = 1)
+    ExistingRdd [key#6,value#7], MapPartitionsRDD[16] at mapPartitions at basicOperators.scala:173)
+14/05/03 22:16:59 INFO TaskSchedulerImpl: Adding task set 6.0 with 150 tasks
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:0 as TID 7 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:0 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 7
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 1 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 7 is 1074
+14/05/03 22:16:59 INFO Executor: Sending result for 7 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:1 as TID 8 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:1 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 0)
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 7 in 23 ms on localhost (progress: 1/150)
+14/05/03 22:16:59 INFO Executor: Finished task ID 7
+14/05/03 22:16:59 INFO Executor: Running task ID 8
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 8 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 8 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 8
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:2 as TID 9 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:2 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 8 in 28 ms on localhost (progress: 2/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 1)
+14/05/03 22:16:59 INFO Executor: Running task ID 9
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 9 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 9 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:3 as TID 10 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:3 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 2)
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 9 in 16 ms on localhost (progress: 3/150)
+14/05/03 22:16:59 INFO Executor: Running task ID 10
+14/05/03 22:16:59 INFO Executor: Finished task ID 9
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 10 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 10 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:4 as TID 11 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:4 as 2885 bytes in 1 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 10 in 17 ms on localhost (progress: 4/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 3)
+14/05/03 22:16:59 INFO Executor: Running task ID 11
+14/05/03 22:16:59 INFO Executor: Finished task ID 10
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 11 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 11 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 11
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:5 as TID 12 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:5 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 11 in 28 ms on localhost (progress: 5/150)
+14/05/03 22:16:59 INFO Executor: Running task ID 12
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 4)
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 12 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 12 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:6 as TID 13 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:6 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 5)
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 12 in 17 ms on localhost (progress: 6/150)
+14/05/03 22:16:59 INFO Executor: Running task ID 13
+14/05/03 22:16:59 INFO Executor: Finished task ID 12
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 13 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 13 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 13
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:7 as TID 14 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:7 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 14
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 13 in 13 ms on localhost (progress: 7/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 6)
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 14 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 14 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 14
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:8 as TID 15 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:8 as 2885 bytes in 1 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 15
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 7)
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 14 in 22 ms on localhost (progress: 8/150)
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 15 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 15 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:9 as TID 16 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:9 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 15 in 25 ms on localhost (progress: 9/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 8)
+14/05/03 22:16:59 INFO Executor: Running task ID 16
+14/05/03 22:16:59 INFO Executor: Finished task ID 15
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 16 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 16 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:10 as TID 17 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:10 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 16 in 25 ms on localhost (progress: 10/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 9)
+14/05/03 22:16:59 INFO Executor: Running task ID 17
+14/05/03 22:16:59 INFO Executor: Finished task ID 16
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 17 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 17 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:11 as TID 18 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:11 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 17 in 24 ms on localhost (progress: 11/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 10)
+14/05/03 22:16:59 INFO Executor: Running task ID 18
+14/05/03 22:16:59 INFO Executor: Finished task ID 17
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 18 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 18 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:12 as TID 19 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:12 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 11)
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 18 in 18 ms on localhost (progress: 12/150)
+14/05/03 22:16:59 INFO Executor: Running task ID 19
+14/05/03 22:16:59 INFO Executor: Finished task ID 18
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 19 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 19 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:13 as TID 20 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:13 as 2885 bytes in 4 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 20
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 19 in 25 ms on localhost (progress: 13/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 12)
+14/05/03 22:16:59 INFO Executor: Finished task ID 19
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 20 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 20 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:14 as TID 21 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:14 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 20 in 24 ms on localhost (progress: 14/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 13)
+14/05/03 22:16:59 INFO Executor: Running task ID 21
+14/05/03 22:16:59 INFO Executor: Finished task ID 20
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 21 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 21 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:15 as TID 22 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:15 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 22
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 21 in 19 ms on localhost (progress: 15/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 14)
+14/05/03 22:16:59 INFO Executor: Finished task ID 21
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 22 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 22 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 22
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:16 as TID 23 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:16 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 23
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 22 in 14 ms on localhost (progress: 16/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 15)
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 23 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 23 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 23
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:17 as TID 24 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:17 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 16)
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 23 in 12 ms on localhost (progress: 17/150)
+14/05/03 22:16:59 INFO Executor: Running task ID 24
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 24 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 24 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 24
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:18 as TID 25 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:18 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 25
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 24 in 11 ms on localhost (progress: 18/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 17)
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 25 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 25 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 25
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 25 in 11 ms on localhost (progress: 19/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 18)
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:19 as TID 26 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:19 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 26
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 26 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 26 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 26
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:20 as TID 27 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:20 as 2885 bytes in 1 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 27
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 26 in 10 ms on localhost (progress: 20/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 19)
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 27 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 27 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 27
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:21 as TID 28 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:21 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 20)
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 27 in 13 ms on localhost (progress: 21/150)
+14/05/03 22:16:59 INFO Executor: Running task ID 28
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 28 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 28 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:22 as TID 29 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:22 as 2885 bytes in 1 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 29
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 28 in 18 ms on localhost (progress: 22/150)
+14/05/03 22:16:59 INFO Executor: Finished task ID 28
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 21)
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 29 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 29 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:23 as TID 30 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:23 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO Executor: Running task ID 30
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 29 in 14 ms on localhost (progress: 23/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 22)
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 30 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 30 directly to driver
+14/05/03 22:16:59 INFO Executor: Finished task ID 29
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:24 as TID 31 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:24 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 30 in 27 ms on localhost (progress: 24/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 23)
+14/05/03 22:16:59 INFO Executor: Running task ID 31
+14/05/03 22:16:59 INFO Executor: Finished task ID 30
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 31 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 31 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:25 as TID 32 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:25 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 31 in 18 ms on localhost (progress: 25/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 24)
+14/05/03 22:16:59 INFO Executor: Running task ID 32
+14/05/03 22:16:59 INFO Executor: Finished task ID 31
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 32 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 32 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:26 as TID 33 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:26 as 2885 bytes in 1 ms
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 25)
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 32 in 19 ms on localhost (progress: 26/150)
+14/05/03 22:16:59 INFO Executor: Running task ID 33
+14/05/03 22:16:59 INFO Executor: Finished task ID 32
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 33 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 33 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:27 as TID 34 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:27 as 2885 bytes in 1 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 33 in 27 ms on localhost (progress: 27/150)
+14/05/03 22:16:59 INFO Executor: Running task ID 34
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 26)
+14/05/03 22:16:59 INFO Executor: Finished task ID 33
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 34 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 34 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:28 as TID 35 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:28 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 34 in 20 ms on localhost (progress: 28/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 27)
+14/05/03 22:16:59 INFO Executor: Running task ID 35
+14/05/03 22:16:59 INFO Executor: Finished task ID 34
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 35 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 35 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:29 as TID 36 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:29 as 2885 bytes in 1 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 35 in 30 ms on localhost (progress: 29/150)
+14/05/03 22:16:59 INFO Executor: Running task ID 36
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 28)
+14/05/03 22:16:59 INFO Executor: Finished task ID 35
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 36 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 36 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:30 as TID 37 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:30 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 29)
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 36 in 15 ms on localhost (progress: 30/150)
+14/05/03 22:16:59 INFO Executor: Running task ID 37
+14/05/03 22:16:59 INFO Executor: Finished task ID 36
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 37 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 37 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:31 as TID 38 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:31 as 2885 bytes in 1 ms
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 30)
+14/05/03 22:16:59 INFO Executor: Running task ID 38
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 37 in 19 ms on localhost (progress: 31/150)
+14/05/03 22:16:59 INFO Executor: Finished task ID 37
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:16:59 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:16:59 INFO Executor: Serialized size of result for 38 is 854
+14/05/03 22:16:59 INFO Executor: Sending result for 38 directly to driver
+14/05/03 22:16:59 INFO TaskSetManager: Starting task 6.0:32 as TID 39 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:16:59 INFO TaskSetManager: Serialized task 6.0:32 as 2885 bytes in 0 ms
+14/05/03 22:16:59 INFO TaskSetManager: Finished TID 38 in 19 ms on localhost (progress: 32/150)
+14/05/03 22:16:59 INFO DAGScheduler: Completed ResultTask(6, 31)
+14/05/03 22:16:59 INFO Executor: Running task ID 39
+14/05/03 22:16:59 INFO Executor: Finished task ID 38
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 39 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 39 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:33 as TID 40 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:33 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 39 in 21 ms on localhost (progress: 33/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 32)
+14/05/03 22:17:00 INFO Executor: Running task ID 40
+14/05/03 22:17:00 INFO Executor: Finished task ID 39
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 40 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 40 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:34 as TID 41 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:34 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 33)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 40 in 20 ms on localhost (progress: 34/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 41
+14/05/03 22:17:00 INFO Executor: Finished task ID 40
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 41 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 41 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:35 as TID 42 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:35 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 41 in 13 ms on localhost (progress: 35/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 34)
+14/05/03 22:17:00 INFO Executor: Running task ID 42
+14/05/03 22:17:00 INFO Executor: Finished task ID 41
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 42 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 42 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:36 as TID 43 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:36 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 42 in 18 ms on localhost (progress: 36/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 35)
+14/05/03 22:17:00 INFO Executor: Running task ID 43
+14/05/03 22:17:00 INFO Executor: Finished task ID 42
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 43 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 43 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:37 as TID 44 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:37 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 36)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 43 in 15 ms on localhost (progress: 37/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 44
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO Executor: Finished task ID 43
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 4 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 44 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 44 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:38 as TID 45 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:38 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 44 in 16 ms on localhost (progress: 38/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 37)
+14/05/03 22:17:00 INFO Executor: Running task ID 45
+14/05/03 22:17:00 INFO Executor: Finished task ID 44
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 45 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 45 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:39 as TID 46 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:39 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 45 in 17 ms on localhost (progress: 39/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 38)
+14/05/03 22:17:00 INFO Executor: Running task ID 46
+14/05/03 22:17:00 INFO Executor: Finished task ID 45
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 46 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 46 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:40 as TID 47 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:40 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 46 in 15 ms on localhost (progress: 40/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 39)
+14/05/03 22:17:00 INFO Executor: Running task ID 47
+14/05/03 22:17:00 INFO Executor: Finished task ID 46
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 47 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 47 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:41 as TID 48 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:41 as 2885 bytes in 1 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 47 in 18 ms on localhost (progress: 41/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 40)
+14/05/03 22:17:00 INFO Executor: Running task ID 48
+14/05/03 22:17:00 INFO Executor: Finished task ID 47
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 48 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 48 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:42 as TID 49 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:42 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 48 in 17 ms on localhost (progress: 42/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 41)
+14/05/03 22:17:00 INFO Executor: Running task ID 49
+14/05/03 22:17:00 INFO Executor: Finished task ID 48
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 2 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 49 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 49 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:43 as TID 50 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:43 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 49 in 18 ms on localhost (progress: 43/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 42)
+14/05/03 22:17:00 INFO Executor: Running task ID 50
+14/05/03 22:17:00 INFO Executor: Finished task ID 49
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 50 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 50 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:44 as TID 51 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:44 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 50 in 19 ms on localhost (progress: 44/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 43)
+14/05/03 22:17:00 INFO Executor: Running task ID 51
+14/05/03 22:17:00 INFO Executor: Finished task ID 50
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 51 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 51 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:45 as TID 52 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:45 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 44)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 51 in 14 ms on localhost (progress: 45/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 52
+14/05/03 22:17:00 INFO Executor: Finished task ID 51
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 52 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 52 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:46 as TID 53 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:46 as 2885 bytes in 1 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 53
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 52 in 22 ms on localhost (progress: 46/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 45)
+14/05/03 22:17:00 INFO Executor: Finished task ID 52
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 53 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 53 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:47 as TID 54 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:47 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 54
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 53 in 19 ms on localhost (progress: 47/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 46)
+14/05/03 22:17:00 INFO Executor: Finished task ID 53
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 54 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 54 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 54
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:48 as TID 55 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:48 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 47)
+14/05/03 22:17:00 INFO Executor: Running task ID 55
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 54 in 14 ms on localhost (progress: 48/150)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 55 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 55 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 55
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:49 as TID 56 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:49 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 56
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 55 in 24 ms on localhost (progress: 49/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 48)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 56 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 56 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 56
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:50 as TID 57 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:50 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 56 in 18 ms on localhost (progress: 50/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 49)
+14/05/03 22:17:00 INFO Executor: Running task ID 57
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 57 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 57 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 57
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:51 as TID 58 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:51 as 2885 bytes in 1 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 58
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 57 in 24 ms on localhost (progress: 51/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 50)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 58 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 58 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 58
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:52 as TID 59 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:52 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 59
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 51)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 58 in 22 ms on localhost (progress: 52/150)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 59 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 59 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:53 as TID 60 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:53 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 52)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 59 in 23 ms on localhost (progress: 53/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 60
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO Executor: Finished task ID 59
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 60 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 60 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:54 as TID 61 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:54 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 53)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 60 in 12 ms on localhost (progress: 54/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 61
+14/05/03 22:17:00 INFO Executor: Finished task ID 60
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 2 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 61 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 61 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:55 as TID 62 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:55 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 54)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 61 in 24 ms on localhost (progress: 55/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 62
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 62 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 62 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 61
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:56 as TID 63 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:56 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 55)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 62 in 11 ms on localhost (progress: 56/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 63
+14/05/03 22:17:00 INFO Executor: Finished task ID 62
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 63 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 63 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:57 as TID 64 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:57 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 56)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 63 in 18 ms on localhost (progress: 57/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 64
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 64 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 64 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:58 as TID 65 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:58 as 2885 bytes in 1 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 64 in 9 ms on localhost (progress: 58/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 57)
+14/05/03 22:17:00 INFO Executor: Finished task ID 64
+14/05/03 22:17:00 INFO Executor: Finished task ID 63
+14/05/03 22:17:00 INFO Executor: Running task ID 65
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 65 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 65 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:59 as TID 66 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:59 as 2885 bytes in 1 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 66
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 65 in 29 ms on localhost (progress: 59/150)
+14/05/03 22:17:00 INFO Executor: Finished task ID 65
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 58)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 66 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 66 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:60 as TID 67 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:60 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 66 in 9 ms on localhost (progress: 60/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 67
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 59)
+14/05/03 22:17:00 INFO Executor: Finished task ID 66
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 3 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 67 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 67 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:61 as TID 68 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:61 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 68
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 67 in 18 ms on localhost (progress: 61/150)
+14/05/03 22:17:00 INFO Executor: Finished task ID 67
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 60)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 68 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 68 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:62 as TID 69 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:62 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Finished task ID 68
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 61)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 68 in 10 ms on localhost (progress: 62/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 69
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 69 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 69 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 69
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:63 as TID 70 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:63 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 70
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 62)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 69 in 20 ms on localhost (progress: 63/150)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 70 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 70 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:64 as TID 71 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:64 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 71
+14/05/03 22:17:00 INFO Executor: Finished task ID 70
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 70 in 33 ms on localhost (progress: 64/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 63)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 71 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 71 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:65 as TID 72 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:65 as 2885 bytes in 1 ms
+14/05/03 22:17:00 INFO Executor: Finished task ID 71
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 64)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 71 in 15 ms on localhost (progress: 65/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 72
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 72 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 72 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 72
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:66 as TID 73 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:66 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 73
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 72 in 10 ms on localhost (progress: 66/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 65)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 73 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 73 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:67 as TID 74 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:67 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 73 in 24 ms on localhost (progress: 67/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 66)
+14/05/03 22:17:00 INFO Executor: Running task ID 74
+14/05/03 22:17:00 INFO Executor: Finished task ID 73
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 74 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 74 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:68 as TID 75 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:68 as 2885 bytes in 2 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 74 in 17 ms on localhost (progress: 68/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 67)
+14/05/03 22:17:00 INFO Executor: Running task ID 75
+14/05/03 22:17:00 INFO Executor: Finished task ID 74
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 75 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 75 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:69 as TID 76 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:69 as 2885 bytes in 1 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 68)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 75 in 12 ms on localhost (progress: 69/150)
+14/05/03 22:17:00 INFO Executor: Finished task ID 75
+14/05/03 22:17:00 INFO Executor: Running task ID 76
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 76 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 76 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 76
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:70 as TID 77 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:70 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 77
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 69)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 76 in 18 ms on localhost (progress: 70/150)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 10 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 77 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 77 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 77
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:71 as TID 78 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:71 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 78
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 70)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 77 in 28 ms on localhost (progress: 71/150)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 78 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 78 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 78
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:72 as TID 79 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:72 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 71)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 78 in 19 ms on localhost (progress: 72/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 79
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 79 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 79 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 79
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:73 as TID 80 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:73 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 80
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 72)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 79 in 16 ms on localhost (progress: 73/150)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 80 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 80 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:74 as TID 81 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:74 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 80 in 13 ms on localhost (progress: 74/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 73)
+14/05/03 22:17:00 INFO Executor: Running task ID 81
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 81 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 81 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:75 as TID 82 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:75 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 81 in 10 ms on localhost (progress: 75/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 74)
+14/05/03 22:17:00 INFO Executor: Running task ID 82
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 82 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 82 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 82
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 82 in 9 ms on localhost (progress: 76/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 75)
+14/05/03 22:17:00 INFO Executor: Finished task ID 81
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:76 as TID 83 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:76 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Finished task ID 80
+14/05/03 22:17:00 INFO Executor: Running task ID 83
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 83 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 83 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:77 as TID 84 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:77 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 84
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 83 in 16 ms on localhost (progress: 77/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 76)
+14/05/03 22:17:00 INFO Executor: Finished task ID 83
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 84 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 84 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 84
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:78 as TID 85 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:78 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 85
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 84 in 11 ms on localhost (progress: 78/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 77)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 2 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 85 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 85 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 85
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:79 as TID 86 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:79 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 85 in 17 ms on localhost (progress: 79/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 78)
+14/05/03 22:17:00 INFO Executor: Running task ID 86
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 86 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 86 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:80 as TID 87 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:80 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 87
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 86 in 20 ms on localhost (progress: 80/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 79)
+14/05/03 22:17:00 INFO Executor: Finished task ID 86
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 87 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 87 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 87
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:81 as TID 88 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:81 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 88
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 80)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 87 in 9 ms on localhost (progress: 81/150)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 88 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 88 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:82 as TID 89 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:82 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 88 in 17 ms on localhost (progress: 82/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 81)
+14/05/03 22:17:00 INFO Executor: Running task ID 89
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 89 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 89 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:83 as TID 90 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:83 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 90
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 89 in 10 ms on localhost (progress: 83/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 82)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 90 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 90 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 90
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 90 in 8 ms on localhost (progress: 84/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 83)
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:84 as TID 91 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:84 as 2885 bytes in 1 ms
+14/05/03 22:17:00 INFO Executor: Finished task ID 89
+14/05/03 22:17:00 INFO Executor: Running task ID 91
+14/05/03 22:17:00 INFO Executor: Finished task ID 88
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 91 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 91 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:85 as TID 92 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:85 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 91 in 10 ms on localhost (progress: 85/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 84)
+14/05/03 22:17:00 INFO Executor: Running task ID 92
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 92 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 92 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 91
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:86 as TID 93 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:86 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 92 in 9 ms on localhost (progress: 86/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 85)
+14/05/03 22:17:00 INFO Executor: Running task ID 93
+14/05/03 22:17:00 INFO Executor: Finished task ID 92
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 93 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 93 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:87 as TID 94 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:87 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 86)
+14/05/03 22:17:00 INFO Executor: Running task ID 94
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 93 in 9 ms on localhost (progress: 87/150)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 94 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 94 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 93
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:88 as TID 95 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:88 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 94 in 16 ms on localhost (progress: 88/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 87)
+14/05/03 22:17:00 INFO Executor: Running task ID 95
+14/05/03 22:17:00 INFO Executor: Finished task ID 94
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 95 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 95 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:89 as TID 96 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:89 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 95 in 16 ms on localhost (progress: 89/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 88)
+14/05/03 22:17:00 INFO Executor: Running task ID 96
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 96 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 96 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 95
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:90 as TID 97 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:90 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 96 in 10 ms on localhost (progress: 90/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 89)
+14/05/03 22:17:00 INFO Executor: Running task ID 97
+14/05/03 22:17:00 INFO Executor: Finished task ID 96
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 97 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 97 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:91 as TID 98 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:91 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 90)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 97 in 8 ms on localhost (progress: 91/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 98
+14/05/03 22:17:00 INFO Executor: Finished task ID 97
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 98 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 98 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 98
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:92 as TID 99 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:92 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 91)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 98 in 8 ms on localhost (progress: 92/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 99
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 99 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 99 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:93 as TID 100 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:93 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 100
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 92)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 99 in 8 ms on localhost (progress: 93/150)
+14/05/03 22:17:00 INFO Executor: Finished task ID 99
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 100 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 100 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 100
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:94 as TID 101 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:94 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 100 in 7 ms on localhost (progress: 94/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 101
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 93)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 101 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 101 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 101
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:95 as TID 102 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:95 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 101 in 10 ms on localhost (progress: 95/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 94)
+14/05/03 22:17:00 INFO Executor: Running task ID 102
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 102 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 102 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:96 as TID 103 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:96 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 102 in 8 ms on localhost (progress: 96/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 103
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 95)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 103 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 103 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 102
+14/05/03 22:17:00 INFO Executor: Finished task ID 103
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:97 as TID 104 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:97 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Running task ID 104
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 103 in 16 ms on localhost (progress: 97/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 96)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 104 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 104 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 104
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:98 as TID 105 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:98 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 104 in 10 ms on localhost (progress: 98/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 97)
+14/05/03 22:17:00 INFO Executor: Running task ID 105
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 105 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 105 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 105
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:99 as TID 106 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:99 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 98)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 105 in 9 ms on localhost (progress: 99/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 106
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 106 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 106 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:100 as TID 107 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:100 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 106 in 7 ms on localhost (progress: 100/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 99)
+14/05/03 22:17:00 INFO Executor: Finished task ID 106
+14/05/03 22:17:00 INFO Executor: Running task ID 107
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 107 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 107 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:101 as TID 108 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:101 as 2885 bytes in 1 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 100)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 107 in 8 ms on localhost (progress: 101/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 108
+14/05/03 22:17:00 INFO Executor: Finished task ID 107
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 108 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 108 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 108
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:102 as TID 109 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:102 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 108 in 22 ms on localhost (progress: 102/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 101)
+14/05/03 22:17:00 INFO Executor: Running task ID 109
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 109 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 109 directly to driver
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:103 as TID 110 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:103 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO Executor: Finished task ID 109
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 102)
+14/05/03 22:17:00 INFO Executor: Running task ID 110
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 109 in 25 ms on localhost (progress: 103/150)
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 110 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 110 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 110
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:104 as TID 111 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:104 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 103)
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 110 in 9 ms on localhost (progress: 104/150)
+14/05/03 22:17:00 INFO Executor: Running task ID 111
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:00 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:00 INFO Executor: Serialized size of result for 111 is 854
+14/05/03 22:17:00 INFO Executor: Sending result for 111 directly to driver
+14/05/03 22:17:00 INFO Executor: Finished task ID 111
+14/05/03 22:17:00 INFO TaskSetManager: Starting task 6.0:105 as TID 112 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:00 INFO TaskSetManager: Serialized task 6.0:105 as 2885 bytes in 0 ms
+14/05/03 22:17:00 INFO TaskSetManager: Finished TID 111 in 9 ms on localhost (progress: 105/150)
+14/05/03 22:17:00 INFO DAGScheduler: Completed ResultTask(6, 104)
+14/05/03 22:17:00 INFO Executor: Running task ID 112
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 112 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 112 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 112
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:106 as TID 113 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:106 as 2885 bytes in 1 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 105)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 112 in 14 ms on localhost (progress: 106/150)
+14/05/03 22:17:01 INFO Executor: Running task ID 113
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 113 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 113 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 113
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:107 as TID 114 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:107 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 106)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 113 in 11 ms on localhost (progress: 107/150)
+14/05/03 22:17:01 INFO Executor: Running task ID 114
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 114 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 114 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:108 as TID 115 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:108 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 115
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 114 in 12 ms on localhost (progress: 108/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 107)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 115 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 115 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:109 as TID 116 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:109 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 108)
+14/05/03 22:17:01 INFO Executor: Running task ID 116
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 115 in 9 ms on localhost (progress: 109/150)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 116 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 116 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:110 as TID 117 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:110 as 2885 bytes in 1 ms
+14/05/03 22:17:01 INFO Executor: Finished task ID 116
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 109)
+14/05/03 22:17:01 INFO Executor: Finished task ID 114
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 116 in 12 ms on localhost (progress: 110/150)
+14/05/03 22:17:01 INFO Executor: Finished task ID 115
+14/05/03 22:17:01 INFO Executor: Running task ID 117
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 117 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 117 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:111 as TID 118 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:111 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 118
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 117 in 18 ms on localhost (progress: 111/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 110)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 118 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 118 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:112 as TID 119 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:112 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 118 in 8 ms on localhost (progress: 112/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 111)
+14/05/03 22:17:01 INFO Executor: Running task ID 119
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 119 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 119 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:113 as TID 120 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:113 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 119 in 11 ms on localhost (progress: 113/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 112)
+14/05/03 22:17:01 INFO Executor: Running task ID 120
+14/05/03 22:17:01 INFO Executor: Finished task ID 119
+14/05/03 22:17:01 INFO Executor: Finished task ID 118
+14/05/03 22:17:01 INFO Executor: Finished task ID 117
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 120 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 120 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 120
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 120 in 9 ms on localhost (progress: 114/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 113)
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:114 as TID 121 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:114 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 121
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 121 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 121 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 121
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:115 as TID 122 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:115 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 114)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 121 in 7 ms on localhost (progress: 115/150)
+14/05/03 22:17:01 INFO Executor: Running task ID 122
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 122 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 122 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:116 as TID 123 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:116 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 123
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 122 in 17 ms on localhost (progress: 116/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 115)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 123 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 123 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 123
+14/05/03 22:17:01 INFO Executor: Finished task ID 122
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:117 as TID 124 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:117 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 116)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 123 in 10 ms on localhost (progress: 117/150)
+14/05/03 22:17:01 INFO Executor: Running task ID 124
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 124 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 124 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 124
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:118 as TID 125 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:118 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 125
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 117)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 124 in 13 ms on localhost (progress: 118/150)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 125 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 125 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:119 as TID 126 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:119 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 118)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 125 in 13 ms on localhost (progress: 119/150)
+14/05/03 22:17:01 INFO Executor: Running task ID 126
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 126 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 126 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:120 as TID 127 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:120 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 119)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 126 in 7 ms on localhost (progress: 120/150)
+14/05/03 22:17:01 INFO Executor: Running task ID 127
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 127 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 127 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 126
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:121 as TID 128 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:121 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 127 in 9 ms on localhost (progress: 121/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 120)
+14/05/03 22:17:01 INFO Executor: Finished task ID 127
+14/05/03 22:17:01 INFO Executor: Running task ID 128
+14/05/03 22:17:01 INFO Executor: Finished task ID 125
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 128 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 128 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:122 as TID 129 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:122 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 121)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 128 in 18 ms on localhost (progress: 122/150)
+14/05/03 22:17:01 INFO Executor: Running task ID 129
+14/05/03 22:17:01 INFO Executor: Finished task ID 128
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 129 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 129 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:123 as TID 130 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:123 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 122)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 129 in 11 ms on localhost (progress: 123/150)
+14/05/03 22:17:01 INFO Executor: Running task ID 130
+14/05/03 22:17:01 INFO Executor: Finished task ID 129
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 130 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 130 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:124 as TID 131 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:124 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 130 in 11 ms on localhost (progress: 124/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 123)
+14/05/03 22:17:01 INFO Executor: Running task ID 131
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Finished task ID 130
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 131 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 131 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:125 as TID 132 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:125 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 131 in 9 ms on localhost (progress: 125/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 124)
+14/05/03 22:17:01 INFO Executor: Finished task ID 131
+14/05/03 22:17:01 INFO Executor: Running task ID 132
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 132 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 132 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 132
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:126 as TID 133 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:126 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 125)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 132 in 8 ms on localhost (progress: 126/150)
+14/05/03 22:17:01 INFO Executor: Running task ID 133
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 133 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 133 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 133
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:127 as TID 134 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:127 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 126)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 133 in 8 ms on localhost (progress: 127/150)
+14/05/03 22:17:01 INFO Executor: Running task ID 134
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 134 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 134 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 134
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:128 as TID 135 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:128 as 2885 bytes in 1 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 135
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 127)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 134 in 16 ms on localhost (progress: 128/150)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 135 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 135 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:129 as TID 136 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:129 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 128)
+14/05/03 22:17:01 INFO Executor: Running task ID 136
+14/05/03 22:17:01 INFO Executor: Finished task ID 135
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 135 in 8 ms on localhost (progress: 129/150)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 136 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 136 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 136
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:130 as TID 137 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:130 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 137
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 129)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 136 in 8 ms on localhost (progress: 130/150)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 137 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 137 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 137
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:131 as TID 138 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:131 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 137 in 9 ms on localhost (progress: 131/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 130)
+14/05/03 22:17:01 INFO Executor: Running task ID 138
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 138 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 138 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:132 as TID 139 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:132 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 139
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 138 in 23 ms on localhost (progress: 132/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 131)
+14/05/03 22:17:01 INFO Executor: Finished task ID 138
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 139 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 139 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:133 as TID 140 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:133 as 2885 bytes in 1 ms
+14/05/03 22:17:01 INFO Executor: Finished task ID 139
+14/05/03 22:17:01 INFO Executor: Running task ID 140
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 132)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 139 in 7 ms on localhost (progress: 133/150)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 140 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 140 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 140
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:134 as TID 141 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:134 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 141
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 140 in 8 ms on localhost (progress: 134/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 133)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 141 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 141 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:135 as TID 142 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:135 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 134)
+14/05/03 22:17:01 INFO Executor: Running task ID 142
+14/05/03 22:17:01 INFO Executor: Finished task ID 141
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 141 in 15 ms on localhost (progress: 135/150)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 142 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 142 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 142
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:136 as TID 143 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:136 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 143
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 135)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 142 in 7 ms on localhost (progress: 136/150)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 143 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 143 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 143
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:137 as TID 144 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:137 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 143 in 8 ms on localhost (progress: 137/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 136)
+14/05/03 22:17:01 INFO Executor: Running task ID 144
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 144 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 144 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 144
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:138 as TID 145 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:138 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 145
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 144 in 24 ms on localhost (progress: 138/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 137)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 145 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 145 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 145
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:139 as TID 146 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:139 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 145 in 14 ms on localhost (progress: 139/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 138)
+14/05/03 22:17:01 INFO Executor: Running task ID 146
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 146 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 146 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 146
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:140 as TID 147 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:140 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 147
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 139)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 146 in 12 ms on localhost (progress: 140/150)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 147 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 147 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:141 as TID 148 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:141 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 148
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 147 in 9 ms on localhost (progress: 141/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 140)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 148 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 148 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:142 as TID 149 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:142 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 149
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 148 in 7 ms on localhost (progress: 142/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 141)
+14/05/03 22:17:01 INFO Executor: Finished task ID 148
+14/05/03 22:17:01 INFO Executor: Finished task ID 147
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 149 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 149 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:143 as TID 150 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:143 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 149 in 6 ms on localhost (progress: 143/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 142)
+14/05/03 22:17:01 INFO Executor: Running task ID 150
+14/05/03 22:17:01 INFO Executor: Finished task ID 149
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 150 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 150 directly to driver
+[1]
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:144 as TID 151 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:144 as 2885 bytes in 1 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 151
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 150 in 15 ms on localhost (progress: 144/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 143)
+14/05/03 22:17:01 INFO Executor: Finished task ID 150
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 1 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 151 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 151 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:145 as TID 152 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:145 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Finished task ID 151
+14/05/03 22:17:01 INFO Executor: Running task ID 152
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 144)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 151 in 7 ms on localhost (progress: 145/150)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 152 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 152 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:146 as TID 153 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:146 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 153
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 152 in 7 ms on localhost (progress: 146/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 145)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 153 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 153 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 153
+14/05/03 22:17:01 INFO Executor: Finished task ID 152
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:147 as TID 154 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:147 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 146)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 153 in 6 ms on localhost (progress: 147/150)
+14/05/03 22:17:01 INFO Executor: Running task ID 154
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 154 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 154 directly to driver
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:148 as TID 155 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:148 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Finished task ID 154
+14/05/03 22:17:01 INFO Executor: Running task ID 155
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 154 in 7 ms on localhost (progress: 148/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 147)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 155 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 155 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 155
+14/05/03 22:17:01 INFO TaskSetManager: Starting task 6.0:149 as TID 156 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:01 INFO TaskSetManager: Serialized task 6.0:149 as 2885 bytes in 0 ms
+14/05/03 22:17:01 INFO Executor: Running task ID 156
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 155 in 6 ms on localhost (progress: 149/150)
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 148)
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: maxBytesInFlight: 50331648, targetRequestSize: 10066329
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Getting 0 non-empty blocks out of 1 blocks
+14/05/03 22:17:01 INFO BlockFetcherIterator$BasicBlockFetcherIterator: Started 0 remote fetches in 0 ms
+14/05/03 22:17:01 INFO Executor: Serialized size of result for 156 is 854
+14/05/03 22:17:01 INFO Executor: Sending result for 156 directly to driver
+14/05/03 22:17:01 INFO Executor: Finished task ID 156
+14/05/03 22:17:01 INFO DAGScheduler: Completed ResultTask(6, 149)
+14/05/03 22:17:01 INFO TaskSetManager: Finished TID 156 in 5 ms on localhost (progress: 150/150)
+14/05/03 22:17:01 INFO DAGScheduler: Stage 6 (collect at RDDRelation.scala:42) finished in 1.974 s
+14/05/03 22:17:01 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool
+14/05/03 22:17:01 INFO SparkContext: Job finished: collect at RDDRelation.scala:42, took 2.198755372 s
+14/05/03 22:17:04 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+14/05/03 22:17:05 INFO SparkContext: Starting job: runJob at ParquetTableOperations.scala:242
+14/05/03 22:17:05 INFO DAGScheduler: Got job 6 (runJob at ParquetTableOperations.scala:242) with 1 output partitions (allowLocal=false)
+14/05/03 22:17:05 INFO DAGScheduler: Final stage: Stage 8(runJob at ParquetTableOperations.scala:242)
+14/05/03 22:17:05 INFO DAGScheduler: Parents of final stage: List()
+14/05/03 22:17:05 INFO DAGScheduler: Missing parents: List()
+14/05/03 22:17:05 INFO DAGScheduler: Submitting Stage 8 (MapPartitionsRDD[29] at mapPartitions at basicOperators.scala:173), which has no missing parents
+14/05/03 22:17:05 INFO DAGScheduler: Submitting 1 missing tasks from Stage 8 (MapPartitionsRDD[29] at mapPartitions at basicOperators.scala:173)
+14/05/03 22:17:05 INFO TaskSchedulerImpl: Adding task set 8.0 with 1 tasks
+14/05/03 22:17:05 INFO TaskSetManager: Starting task 8.0:0 as TID 157 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:05 INFO TaskSetManager: Serialized task 8.0:0 as 9696 bytes in 1 ms
+14/05/03 22:17:05 INFO Executor: Running task ID 157
+14/05/03 22:17:06 WARN Configuration: mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+14/05/03 22:17:06 WARN Configuration: mapred.output.key.class is deprecated. Instead, use mapreduce.job.output.key.class
+14/05/03 22:17:06 WARN Configuration: mapred.output.value.class is deprecated. Instead, use mapreduce.job.output.value.class
+14/05/03 22:17:06 INFO CodecConfig: Compression: GZIP
+14/05/03 22:17:06 INFO ParquetOutputFormat: Parquet block size to 134217728
+14/05/03 22:17:06 INFO ParquetOutputFormat: Parquet page size to 1048576
+14/05/03 22:17:06 INFO ParquetOutputFormat: Parquet dictionary page size to 1048576
+14/05/03 22:17:06 INFO ParquetOutputFormat: Dictionary is on
+14/05/03 22:17:06 INFO ParquetOutputFormat: Validation is off
+14/05/03 22:17:06 INFO ParquetOutputFormat: Writer version is: PARQUET_1_0
+14/05/03 22:17:06 INFO CodecPool: Got brand-new compressor [.gz]
+14/05/03 22:17:06 INFO InternalParquetRecordWriter: Flushing mem store to file. allocated memory: 31,459,468
+14/05/03 22:17:06 INFO ColumnChunkPageWriteStore: written 199B for [key] INT32: 100 values, 407B raw, 179B comp, 1 pages, encodings: [BIT_PACKED, RLE, PLAIN]
+14/05/03 22:17:06 INFO ColumnChunkPageWriteStore: written 231B for [value] BINARY: 100 values, 999B raw, 211B comp, 1 pages, encodings: [BIT_PACKED, RLE, PLAIN]
+14/05/03 22:17:08 INFO FileOutputCommitter: Saved output of task 'attempt_201405032217_0031_r_000000_157' to file:/home/code/kingfly/pair.parquet/_temporary/0/task_201405032217_0031_r_000000
+14/05/03 22:17:08 INFO Executor: Serialized size of result for 157 is 596
+14/05/03 22:17:08 INFO Executor: Sending result for 157 directly to driver
+14/05/03 22:17:08 INFO Executor: Finished task ID 157
+14/05/03 22:17:08 INFO DAGScheduler: Completed ResultTask(8, 0)
+14/05/03 22:17:08 INFO TaskSetManager: Finished TID 157 in 2965 ms on localhost (progress: 1/1)
+14/05/03 22:17:08 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool
+14/05/03 22:17:08 INFO DAGScheduler: Stage 8 (runJob at ParquetTableOperations.scala:242) finished in 2.966 s
+14/05/03 22:17:08 INFO SparkContext: Job finished: runJob at ParquetTableOperations.scala:242, took 3.030411895 s
+14/05/03 22:17:09 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+14/05/03 22:17:09 INFO MemoryStore: ensureFreeSpace(116612) called with curMem=0, maxMem=281857228
+14/05/03 22:17:09 INFO MemoryStore: Block broadcast_0 stored as values to memory (estimated size 113.9 KB, free 268.7 MB)
+14/05/03 22:17:10 INFO FileInputFormat: Total input paths to process : 1
+14/05/03 22:17:10 INFO ParquetInputFormat: Total input paths to process : 1
+14/05/03 22:17:10 INFO ParquetFileReader: reading summary file: file:/home/code/kingfly/pair.parquet/_metadata
+14/05/03 22:17:10 INFO SparkContext: Starting job: collect at RDDRelation.scala:51
+14/05/03 22:17:10 INFO DAGScheduler: Got job 7 (collect at RDDRelation.scala:51) with 1 output partitions (allowLocal=false)
+14/05/03 22:17:10 INFO DAGScheduler: Final stage: Stage 9(collect at RDDRelation.scala:51)
+14/05/03 22:17:10 INFO DAGScheduler: Parents of final stage: List()
+14/05/03 22:17:10 INFO DAGScheduler: Missing parents: List()
+14/05/03 22:17:10 INFO DAGScheduler: Submitting Stage 9 (SchemaRDD[34] at RDD at SchemaRDD.scala:96
+== Query Plan ==
+Project [value#15:0 AS a#16]
+ Filter (key#14:1 = 1)
+  ParquetTableScan [value#15,key#14], (ParquetRelation pair.parquet), None), which has no missing parents
+14/05/03 22:17:10 INFO DAGScheduler: Submitting 1 missing tasks from Stage 9 (SchemaRDD[34] at RDD at SchemaRDD.scala:96
+== Query Plan ==
+Project [value#15:0 AS a#16]
+ Filter (key#14:1 = 1)
+  ParquetTableScan [value#15,key#14], (ParquetRelation pair.parquet), None)
+14/05/03 22:17:10 INFO TaskSchedulerImpl: Adding task set 9.0 with 1 tasks
+14/05/03 22:17:10 INFO TaskSetManager: Starting task 9.0:0 as TID 158 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:10 INFO TaskSetManager: Serialized task 9.0:0 as 2906 bytes in 0 ms
+14/05/03 22:17:10 INFO Executor: Running task ID 158
+14/05/03 22:17:10 INFO BlockManager: Found block broadcast_0 locally
+14/05/03 22:17:10 INFO NewHadoopRDD: Input split: ParquetInputSplit{part: file:///home/code/kingfly/pair.parquet/part-r-1.parquet start: 0 length: 430 hosts: [localhost] blocks: 1 requestedSchema: message root {
+  optional binary value;
+  optional int32 key;
+}
+ fileSchema: message root {
+  optional int32 key;
+  optional binary value;
+}
+ extraMetadata: {} readSupportMetadata: {}}
+14/05/03 22:17:10 WARN ParquetRecordReader: Can not initialize counter due to context is not a instance of TaskInputOutputContext, but is org.apache.hadoop.mapreduce.task.TaskAttemptContextImpl
+14/05/03 22:17:10 INFO InternalParquetRecordReader: RecordReader initialized will read a total of 100 records.
+14/05/03 22:17:10 INFO InternalParquetRecordReader: at row 0. reading next block
+14/05/03 22:17:10 INFO CodecPool: Got brand-new decompressor [.gz]
+14/05/03 22:17:10 INFO InternalParquetRecordReader: block read in memory in 17 ms. row count = 100
+14/05/03 22:17:10 INFO Executor: Serialized size of result for 158 is 736
+14/05/03 22:17:10 INFO Executor: Sending result for 158 directly to driver
+14/05/03 22:17:10 INFO Executor: Finished task ID 158
+14/05/03 22:17:10 INFO DAGScheduler: Completed ResultTask(9, 0)
+14/05/03 22:17:10 INFO TaskSetManager: Finished TID 158 in 151 ms on localhost (progress: 1/1)
+14/05/03 22:17:10 INFO TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool
+14/05/03 22:17:10 INFO DAGScheduler: Stage 9 (collect at RDDRelation.scala:51) finished in 0.142 s
+14/05/03 22:17:10 INFO SparkContext: Job finished: collect at RDDRelation.scala:51, took 0.19362909 s
+[val_1]
+14/05/03 22:17:10 INFO MemoryStore: ensureFreeSpace(116612) called with curMem=116612, maxMem=281857228
+14/05/03 22:17:10 INFO MemoryStore: Block broadcast_1 stored as values to memory (estimated size 113.9 KB, free 268.6 MB)
+14/05/03 22:17:10 INFO FileInputFormat: Total input paths to process : 1
+14/05/03 22:17:10 INFO ParquetInputFormat: Total input paths to process : 1
+14/05/03 22:17:10 INFO ParquetFileReader: reading summary file: file:/home/code/kingfly/pair.parquet/_metadata
+14/05/03 22:17:10 INFO SparkContext: Starting job: collect at RDDRelation.scala:55
+14/05/03 22:17:10 INFO DAGScheduler: Got job 8 (collect at RDDRelation.scala:55) with 1 output partitions (allowLocal=false)
+14/05/03 22:17:10 INFO DAGScheduler: Final stage: Stage 10(collect at RDDRelation.scala:55)
+14/05/03 22:17:10 INFO DAGScheduler: Parents of final stage: List()
+14/05/03 22:17:10 INFO DAGScheduler: Missing parents: List()
+14/05/03 22:17:10 INFO DAGScheduler: Submitting Stage 10 (SchemaRDD[39] at RDD at SchemaRDD.scala:96
+== Query Plan ==
+ParquetTableScan [key#14,value#15], (ParquetRelation pair.parquet), None), which has no missing parents
+14/05/03 22:17:10 INFO DAGScheduler: Submitting 1 missing tasks from Stage 10 (SchemaRDD[39] at RDD at SchemaRDD.scala:96
+== Query Plan ==
+ParquetTableScan [key#14,value#15], (ParquetRelation pair.parquet), None)
+14/05/03 22:17:10 INFO TaskSchedulerImpl: Adding task set 10.0 with 1 tasks
+14/05/03 22:17:10 INFO TaskSetManager: Starting task 10.0:0 as TID 159 on executor localhost: localhost (PROCESS_LOCAL)
+14/05/03 22:17:10 INFO TaskSetManager: Serialized task 10.0:0 as 1969 bytes in 0 ms
+14/05/03 22:17:10 INFO Executor: Running task ID 159
+14/05/03 22:17:10 INFO BlockManager: Found block broadcast_1 locally
+14/05/03 22:17:10 INFO NewHadoopRDD: Input split: ParquetInputSplit{part: file:///home/code/kingfly/pair.parquet/part-r-1.parquet start: 0 length: 430 hosts: [localhost] blocks: 1 requestedSchema: same as file fileSchema: message root {
+  optional int32 key;
+  optional binary value;
+}
+ extraMetadata: {} readSupportMetadata: {}}
+14/05/03 22:17:10 WARN ParquetRecordReader: Can not initialize counter due to context is not a instance of TaskInputOutputContext, but is org.apache.hadoop.mapreduce.task.TaskAttemptContextImpl
+14/05/03 22:17:10 INFO InternalParquetRecordReader: RecordReader initialized will read a total of 100 records.
+14/05/03 22:17:10 INFO InternalParquetRecordReader: at row 0. reading next block
+14/05/03 22:17:10 INFO CodecPool: Got brand-new decompressor [.gz]
+14/05/03 22:17:10 INFO InternalParquetRecordReader: block read in memory in 0 ms. row count = 100
+14/05/03 22:17:10 INFO Executor: Serialized size of result for 159 is 4289
+14/05/03 22:17:10 INFO Executor: Sending result for 159 directly to driver
+14/05/03 22:17:10 INFO TaskSetManager: Finished TID 159 in 13 ms on localhost (progress: 1/1)
+14/05/03 22:17:10 INFO TaskSchedulerImpl: Removed TaskSet 10.0, whose tasks have all completed, from pool
+14/05/03 22:17:10 INFO DAGScheduler: Completed ResultTask(10, 0)
+14/05/03 22:17:10 INFO DAGScheduler: Stage 10 (collect at RDDRelation.scala:55) finished in 0.013 s
+14/05/03 22:17:10 INFO SparkContext: Job finished: collect at RDDRelation.scala:55, took 0.023195897 s
+14/05/03 22:17:10 INFO Executor: Finished task ID 159
+[1,val_1]
+[2,val_2]
+[3,val_3]
+[4,val_4]
+[5,val_5]
+[6,val_6]
+[7,val_7]
+[8,val_8]
+[9,val_9]
+[10,val_10]
+[11,val_11]
+[12,val_12]
+[13,val_13]
+[14,val_14]
+[15,val_15]
+[16,val_16]
+[17,val_17]
+[18,val_18]
+[19,val_19]
+[20,val_20]
+[21,val_21]
+[22,val_22]
+[23,val_23]
+[24,val_24]
+[25,val_25]
+[26,val_26]
+[27,val_27]
+[28,val_28]
+[29,val_29]
+[30,val_30]
+[31,val_31]
+[32,val_32]
+[33,val_33]
+[34,val_34]
+[35,val_35]
+[36,val_36]
+[37,val_37]
+[38,val_38]
+[39,val_39]
+[40,val_40]
+[41,val_41]
+[42,val_42]
+[43,val_43]
+[44,val_44]
+[45,val_45]
+[46,val_46]
+[47,val_47]
+[48,val_48]
+[49,val_49]
+[50,val_50]
+[51,val_51]
+[52,val_52]
+[53,val_53]
+[54,val_54]
+[55,val_55]
+[56,val_56]
+[57,val_57]
+[58,val_58]
+[59,val_59]
+[60,val_60]
+[61,val_61]
+[62,val_62]
+[63,val_63]
+[64,val_64]
+[65,val_65]
+[66,val_66]
+[67,val_67]
+[68,val_68]
+[69,val_69]
+[70,val_70]
+[71,val_71]
+[72,val_72]
+[73,val_73]
+[74,val_74]
+[75,val_75]
+[76,val_76]
+[77,val_77]
+[78,val_78]
+[79,val_79]
+[80,val_80]
+[81,val_81]
+[82,val_82]
+[83,val_83]
+[84,val_84]
+[85,val_85]
+[86,val_86]
+[87,val_87]
+[88,val_88]
+[89,val_89]
+[90,val_90]
+[91,val_91]
+[92,val_92]
+[93,val_93]
+[94,val_94]
+[95,val_95]
+[96,val_96]
+[97,val_97]
+[98,val_98]
+[99,val_99]
+[100,val_100]
+
+Process finished with exit code 0
