@@ -33,6 +33,34 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/org/scalatest/scalatest_2.10/1.9.1/scalatest_2.10-1.9.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="source">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../../../lib/spark-bagel_2.10-1.0.0-SNAPSHOT-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/spark-core_2.10-1.0.0-SNAPSHOT-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/spark-examples_2.10-1.0.0-SNAPSHOT-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/spark-graphx_2.10-1.0.0-SNAPSHOT-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/spark-hive_2.10-1.0.0-SNAPSHOT-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/spark-mllib_2.10-1.0.0-SNAPSHOT-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/spark-repl_2.10-1.0.0-SNAPSHOT-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/spark-sql_2.10-1.0.0-SNAPSHOT-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/spark-streaming_2.10-1.0.0-SNAPSHOT-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/spark-tools_2.10-1.0.0-SNAPSHOT-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/spark-catalyst_2.10-1.0.0-SNAPSHOT-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
 
