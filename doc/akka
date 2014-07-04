@@ -1,0 +1,211 @@
+link: http://markusjura.github.io/akka-intro-slides/#/8
+
+1 What is Akka?
+
+    Akka is a toolkit and runtime for building highly concurrent, distributed,
+    and fault tolerant event-driven applications on the JVM.
+
+2 Akka's Value Proposition
+
+ A single unified programming model for
+
+     simpler concurrency
+     simpler distribution
+     simpler fault tolerance
+
+3 Program at Higher Level
+
+      Never think about
+          Shared state
+          Threads
+          Locks
+      Low level concurrency becomes simple
+          Think how messages flow in the system
+
+          High CPU utilization
+          Low latency
+          High troughput
+          Scalability
+4 What is an Actor?
+
+      Java / Scala Class
+          With a mailbox (Queue)
+          Receives messages
+          Only one message at a time is handled
+          Extremely lightweight (400 Bytes / 2.7 Million per GB)  ?
+5 What can I use Actors for?
+
+      Can be an alternative to:
+          Thread
+          Object instance or component
+          Callback or listener
+          Singleton or service
+
+      Can be an alternative to:
+          Router, load-Balancer or pool
+          Java EE Session Bean or Message-Driven Bean
+          Finite State Machine (FSM)
+6 Actor in Scala
+
+  // Message Protocol
+  case class Greeting(who: String)
+
+  class GreetingActor extends Actor {
+    // Put mutable state in here..
+
+    def receive = {
+      // Define the behavior here..
+      case Greeting(who) => println(s"Hello $who")
+    }
+  }
+
+7  Core Actor Operations
+
+      When an Actor handles a Message, it can
+          Create → Create new Actors
+          Send → Send messages to other Actors
+          Become → Change the behavior for handling the next message
+          Supervise → Manage another Actors failure
+7.1. Create
+
+    Each Actor is repesented by an ActorRef
+    You never get access to an Actor instance
+    An Actor reference let's you send messages to an Actor
+
+Actor in Scala
+
+// Message Protocol
+case class Greeting(who: String)
+
+class GreetingActor extends Actor {
+  // Put mutable state in here..
+
+  def receive = {
+    // Define the behavior here..
+    case Greeting(who) => println(s"Hello $who")
+  }
+}
+
+    Create an Actor (Java)
+
+    // Creates an Actor system
+    final ActorSystem system = ActorSystem.create("MySystem");
+
+    final ActorRef greeter =
+      system.actorOf(new Props(GreetingActor.class), "greeter");
+    //       ^^ Create   ^^ Actor configuration      ^^ Actor name
+
+7.2 Send
+
+        To send a message to an actor, you need a Actor reference
+
+        Asynchronous and Non-blocking (Fire-and-forget)
+
+        Attention: Messages must be immutable!
+        Best practice:
+            Use case objects and/or case classes
+            Define the message protocol in the companion object of the actor
+7.3. Become
+
+    Dynamically redefining Actors behavior ?
+    Triggered by receiving a message
+    Will now react differently to the messages it receives
+
+    def happy: Receive = {
+      case HappyMessage => ...
+    }
+
+    def receive = {
+      case HappyMessage => context become(happy)
+    }
+
+
+
+8 Remote Deployment
+
+  akka {
+    actor {
+      # Configure Remote Provider
+      provider = akka.remote.RemoteActorRefProvider
+      deployment {
+        /greeter {
+          # Define Remote Path
+          remote = akka://MySystem@machine1:2552
+        }
+      }
+    }
+  }
+
+      Just feed the ActorSystem with this configuration → Zero code changes
+      You can configure the remote deployment programmatically as well
+9 Routers (Java)
+
+  Programmatically
+
+  int nrOfInstances = 5;
+  ActorRef router =
+    system.actorOf(new Props(SomeActor)
+      .withRouter(new RoundRobinRouter(nrOfInstances)));
+
+  or
+
+  akka.actor.deployment {
+    /myRouter {
+      router = round-robin
+      nr-of-instances = 5
+    }
+  }
+
+  ActorRef router =
+    system.actorOf(new Props(SomeActor)
+      .withRouter(new FromConfig(), "myRouter");
+
+
+  0)Router with Resizer (Java)
+
+  int lowerBound = 2;
+  int upperBound = 15;
+  DefaultResizer resizer = new DefaultResizer(lowerBound, upperBound);
+
+  ActorRef routerWithResizer = system.actorOf(
+    new Props(SomeActor.class)
+      .withRouter(new RoundRobinRouter(resizer)));
+10 Failure Management in Akka
+
+       Supervisor handles failure
+           Actor throws exception → Supervisor react on failure
+       Callers need not care (they can't anyway)
+       Clean separation of processing and error handling
+
+   Supervisor Strategy
+    Every Actor has a default supervisor strategy
+        ActorInitializationException → Stop
+        ActorKilledException → Stop
+        Exception → Restart
+        Throwable → Escalate
+        Otherwise → Escalate
+
+
+Override Supervisor Strategy (Scala)
+
+class Supervisor extends Actor {
+  override val supervisorStrategy = OneForOneStrategy(
+      maxNrOfRetries = 10, withinTimeRange = 1 minute) {
+    case _: ArithmeticException  => Resume
+    case _: NullPointerException => Restart
+    case _: Exception            => Escalate
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

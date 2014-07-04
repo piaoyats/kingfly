@@ -19,7 +19,7 @@ http://my.oschina.net/joymufeng/blog/140604
 
  二、Symbol类型的主要特点
 
-    下面接着介绍Symbol类型的两个特点。
+    下面接着介绍Symbol类型的两个特点: 节省内存和高效的用于比较。
 
 1. 节省内存
 
@@ -39,4 +39,5 @@ http://my.oschina.net/joymufeng/blog/140604
 
      三、Symbol类型的应用
 
-        Symbol类型一般用于快速比较，例如用于Map类型：Map<Symbol, Data>,根据一个Symbol对象，可以快速查询相应的Data, 而Map<String, Data>的查询效率则低很多。
+        Symbol类型一般用于快速比较，例如用于Map类型：Map<Symbol, Data>,根据一个Symbol对象，可以
+        快速查询相应的Data, 而Map<String, Data>的查询效率则低很多。
