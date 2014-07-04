@@ -21,12 +21,6 @@ reports/
 .scala_dependencies
 lib_managed/
 src_managed/
-project/boot/
-project/plugins/project/build.properties
-project/build/target/
-project/plugins/target/
-project/plugins/lib_managed/
-project/plugins/src_managed/
 logs/
 log/
 dependency-reduced-pom.xml
