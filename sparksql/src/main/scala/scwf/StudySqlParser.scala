@@ -1,4 +1,4 @@
-package wfscala
+package scwf
 
 import org.apache.spark.sql.catalyst.SqlParser
 import org.apache.spark.sql.catalyst.analysis.{SimpleCatalog, Catalog, EmptyFunctionRegistry, Analyzer}
@@ -28,9 +28,6 @@ object StudySqlParser {
     val plan3 = optimizer(plan2)
     println(plan3)
 
-//    val planner = new SparkPlanner
-//    val plan4 = planner(plan3).next()
-//    println(plan4)
   }
 
 }

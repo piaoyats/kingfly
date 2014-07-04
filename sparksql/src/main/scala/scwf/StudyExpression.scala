@@ -1,4 +1,4 @@
-package wfscala
+package scwf
 
 import org.apache.spark.sql.catalyst.dsl.expressions._
 import org.apache.spark.sql.SQLContext
@@ -15,6 +15,7 @@ object StudyExpression {
     println( s == 'aSymbol)
     //输出true
     println( s == Symbol("aSymbol"))
+
     val eprs = ('key === 1)
     println(eprs)
   }
