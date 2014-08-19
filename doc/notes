@@ -1,7 +1,0 @@
-speak bad words on mongodb
-http://coolshell.cn/articles/5826.html 
-
-this error may be lead to by scala rp
-Error:(193, 54) value resolveOne is not a member of akka.actor.ActorSelection
-        Await.result(actorSystem.actorSelection(url).resolveOne(timeout), timeout)
-                                                     ^
