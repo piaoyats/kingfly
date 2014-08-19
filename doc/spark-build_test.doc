@@ -1,0 +1,5 @@
+sbt/sbt -Pyarn -Phadoop-2.3 -Dhadoop.version=2.3.0 -Pkinesis-asl -Phive -Phive-thriftserver assembly
+sbt/sbt -Pyarn -Phadoop-2.3 -Dhadoop.version=2.3.0 -Pkinesis-asl -Phive -Phive-thriftserver test
+bin/spark-submit --class org.apache.spark.examples.SparkPi --master local --driver-java-options '-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765' examples/target/scala-2.10/spark-examples-1.1.0-SNAPSHOT-hadoop1.0.4.jar 50 
+
+
