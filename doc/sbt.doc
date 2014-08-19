@@ -1,0 +1,15 @@
+常用命令
+
+actions – 显示对当前工程可用的命令
+update – 下载依赖
+compile – 编译代码
+test – 运行测试代码
+package – 创建一个可发布的jar包
+publish-local – 把构建出来的jar包安装到本地的ivy缓存
+publish – 把jar包发布到远程仓库（如果配置了的话)
+更多命令
+
+test-failed – 运行失败的spec
+test-quick – 运行所有失败的以及/或者是由依赖更新的spec
+clean-cache – 清除所有的sbt缓存。类似于sbt的clean命令
+clean-lib – 删除lib_managed下的所有内容
