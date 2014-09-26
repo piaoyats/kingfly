@@ -14,7 +14,7 @@ object StudySqlParser {
     val plan1 = parser(sql)
     println(plan1)
 
-    val catalog: Catalog = new SimpleCatalog
+    val catalog: Catalog = new SimpleCatalog(false)
 
     import org.apache.spark.sql.catalyst.plans.logical._
     import org.apache.spark.sql.catalyst.dsl.expressions._
