@@ -1,0 +1,62 @@
+#############use keytool############
+Generating Keys and Certificates with JDK keytool
+keytool -keystore spark.keystore -alias spark -genkey -keyalg RSA
+Enter keystore password:
+Re-enter new password:
+What is your first and last name?
+  [Unknown]:  spark.apache.org
+What is the name of your organizational unit?
+  [Unknown]:  spark
+What is the name of your organization?
+  [Unknown]:
+What is the name of your City or Locality?
+  [Unknown]:
+What is the name of your State or Province?
+  [Unknown]:
+What is the two-letter country code for this unit?
+  [Unknown]:
+Is CN=spark.apache.org, OU=spark, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
+  [no]:  yes
+
+Enter key password for <spark>
+	(RETURN if same as keystore password):
+Re-enter new password:
+
+
+#############use openssl############
+Generating Keys and Certificates with OpenSSL keytool
+
+openssl genrsa -des3 -out spark.key
+openssl req -new -x509 -key spark.key -out spark.crt
+
+openssl req -new -x509 -key spark.key -out spark.crt
+Enter pass phrase for spark.key:
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:
+State or Province Name (full name) [Some-State]:
+Locality Name (eg, city) []:
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []:spark.apache.org
+Email Address []:
+
+
+Loading Keys and Certificates via PKCS12
+openssl pkcs12 -inkey spark.key -in spark.crt -export -out spark.pkcs12
+keytool -importkeystore -srckeystore spark.pkcs12 -srcstoretype PKCS12 -destkeystore spark.keystore
+
+###Loading Certificates with keytool###
+keytool -keystore keystore -import -alias jetty -file jetty.crt -trustcacerts
+
+
+---------config----------------
+export SPARK_MASTER_OPTS="-Dspark.ui.https.enabled=true -Dspark.ui.ssl.server.keystore.location=/home/wf/code/https/ssl/spark.keystore -Dspark.ui.ssl.server.keystore.keypassword=123456 -Dspark.ui.ssl.server.keystore.password=123456"
+
+export SPARK_WORKER_OPTS="-Dspark.ui.https.enabled=true -Dspark.ui.ssl.server.keystore.location=/home/wf/code//https/ssl/spark.keystore -Dspark.ui.ssl.server.keystore.keypassword=123456 -Dspark.ui.ssl.server.keystore.password=123456"
+
