@@ -1,0 +1,24 @@
+kf@kf:/home/wf/code/spark3$ ll pair.orc/
+total 28
+drwxrwxr-x  2 kf kf 4096 Oct  3 22:49 ./
+drwxrwxr-x 34 kf kf 4096 Oct  3 22:49 ../
+-rwxrwxrwx  1 kf kf  334 Oct  3 22:49 part-r-1.orc*
+-rw-rw-r--  1 kf kf   12 Oct  3 22:49 .part-r-1.orc.crc
+-rwxrwxrwx  1 kf kf  339 Oct  3 22:49 part-r-2.orc*
+-rw-rw-r--  1 kf kf   12 Oct  3 22:49 .part-r-2.orc.crc
+-rwxrwxrwx  1 kf kf    0 Oct  3 22:49 _SUCCESS*
+-rw-rw-r--  1 kf kf    8 Oct  3 22:49 ._SUCCESS.crc
+kf@kf:/home/wf/code/spark3$ ll pair.parquet/
+total 36
+drwxrwxr-x  2 kf kf 4096 Oct  3 22:49 ./
+drwxrwxr-x 34 kf kf 4096 Oct  3 22:49 ../
+-rwxrwxrwx  1 kf kf  440 Oct  3 22:49 _metadata*
+-rw-rw-r--  1 kf kf   12 Oct  3 22:49 ._metadata.crc
+-rwxrwxrwx  1 kf kf  752 Oct  3 22:49 part-r-1.parquet*
+-rw-rw-r--  1 kf kf   16 Oct  3 22:49 .part-r-1.parquet.crc
+-rwxrwxrwx  1 kf kf  753 Oct  3 22:49 part-r-2.parquet*
+-rw-rw-r--  1 kf kf   16 Oct  3 22:49 .part-r-2.parquet.crc
+-rwxrwxrwx  1 kf kf    0 Oct  3 22:49 _SUCCESS*
+-rw-rw-r--  1 kf kf    8 Oct  3 22:49 ._SUCCESS.crc
+
+貌似orc的压缩效果更好！
