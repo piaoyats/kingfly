@@ -1,0 +1,2 @@
+ 1 !ShimLoader.getHadoopShims.usesJobShell() 没有必要
+ 2 ShimLoader.getHadoopShims().isSecurityEnabled() 判断后再进行认证判断

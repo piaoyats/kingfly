@@ -1,0 +1,68 @@
+[info] - udf_xpath_int *** FAILED ***
+[info]   Failed to execute query using catalyst:
+[info]   Error: Job aborted due to stage failure: Task 1 in stage 7300.0 failed 1 times, most recent failure: Lost task 1.0 in stage 7300.0 (TID 32861, localhost):
+org.apache.hadoop.hive.ql.metadata.HiveException:
+Unable to execute method public int org.apache.hadoop.hive.ql.udf.xml.UDFXPathInteger.evaluate(java.lang.String,java.lang.String)
+on object org.apache.hadoop.hive.ql.udf.xml.UDFXPathInteger@5583f80d of class org.apache.hadoop.hive.ql.udf.xml.UDFXPathInteger with arguments
+{<a><b class="odd">1</b><b class="even">2</b><b class="odd">4</b><c>8</c></a>:java.lang.String, a/b:java.lang.String} of size 2
+
+[info]           org.apache.hadoop.hive.ql.exec.FunctionRegistry.invoke(FunctionRegistry.java:1030)
+[info]           org.apache.spark.sql.hive.HiveSimpleUdf.eval(hiveUdfs.scala:113)
+[info]           org.apache.spark.sql.catalyst.expressions.Alias.eval(namedExpressions.scala:85)
+[info]           org.apache.spark.sql.catalyst.expressions.InterpretedMutableProjection.apply(Projection.scala:66)
+[info]           org.apache.spark.sql.catalyst.expressions.InterpretedMutableProjection.apply(Projection.scala:50)
+[info]           scala.collection.Iterator$$anon$11.next(Iterator.scala:328)
+[info]           scala.collection.Iterator$$anon$10.next(Iterator.scala:312)
+[info]           scala.collection.Iterator$$anon$11.next(Iterator.scala:328)
+[info]           org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:210)
+[info]           org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:65)
+[info]           org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:68)
+[info]           org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:41)
+[info]           org.apache.spark.scheduler.Task.run(Task.scala:56)
+[info]           org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:183)
+[info]           java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+[info]           java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+[info]           java.lang.Thread.run(Thread.java:745)
+[info]   Driver stacktrace:
+[info]   org.apache.spark.SparkException: Job aborted due to stage failure: Task 1 in stage 7300.0 failed 1 times, most recent failure: Lost task 1.0 in stage 7300.0 (TID 32861, localhost):
+ org.apache.hadoop.hive.ql.metadata.HiveException: Unable to execute method public int org.apache.hadoop.hive.ql.udf.xml.UDFXPathInteger.evaluate(java.lang.String,java.lang.String)  on object org.apache.ha
+doop.hive.ql.udf.xml.UDFXPathInteger@5583f80d of class org.apache.hadoop.hive.ql.udf.xml.UDFXPathInteger with arguments {<a><b class="odd">1</b><b class="even">2</b><b class="odd">4</b><c>8</c></a>:java.la
+ng.String, a/b:java.lang.String} of size 2
+[info]           org.apache.hadoop.hive.ql.exec.FunctionRegistry.invoke(FunctionRegistry.java:1030)
+[info]           org.apache.spark.sql.hive.HiveSimpleUdf.eval(hiveUdfs.scala:113)
+[info]           org.apache.spark.sql.catalyst.expressions.Alias.eval(namedExpressions.scala:85)
+[info]           org.apache.spark.sql.catalyst.expressions.InterpretedMutableProjection.apply(Projection.scala:66)
+[info]           org.apache.spark.sql.catalyst.expressions.InterpretedMutableProjection.apply(Projection.scala:50)
+[info]           scala.collection.Iterator$$anon$11.next(Iterator.scala:328)
+[info]           scala.collection.Iterator$$anon$10.next(Iterator.scala:312)
+[info]           scala.collection.Iterator$$anon$11.next(Iterator.scala:328)
+[info]           org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:210)
+[info]           org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:65)
+[info]           org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:68)
+[info]           org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:41)
+[info]           org.apache.spark.scheduler.Task.run(Task.scala:56)
+[info]           org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:183)
+[info]           java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+[info]           java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+[info]           java.lang.Thread.run(Thread.java:745)
+[info]   Driver stacktrace:
+[info]   	at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1192)
+[info]   	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1181)
+[info]   	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1180)
+[info]   	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+[info]   	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)
+[info]   	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1180)
+[info]   	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:695)
+[info]   	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:695)
+[info]   92%)   at scala.Option.foreach(Option.scala:236)
+[info]   	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:695)
+[info]   	at org.apache.spark.scheduler.DAGSchedulerEventProcessActor$$anonfun$receive$2.applyOrElse(DAGScheduler.scala:1398)
+[info]   	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:498)
+[info]   	at akka.actor.ActorCell.invoke(ActorCell.scala:456)
+[info]   	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:237)
+[info]   	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+[info]   	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+[info]   	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+[info]   	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+[info]   	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+[info]   	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)

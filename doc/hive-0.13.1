@@ -1,0 +1,46 @@
+1 spark升级到hive 0.13.1 下解析sql必须传入hiveconf，否则报错
+
+  createQueryTest("quoted alias.attr",
+    "SELECT `a`.`key` FROM src a ORDER BY key LIMIT 1")
+
+[info] - quoted alias.attr *** FAILED ***
+[info]   org.apache.spark.sql.hive.HiveQl$ParseException: Failed to parse: SELECT `a`.`key` FROM src a ORDER BY key LIMIT 1
+[info]   at org.apache.spark.sql.hive.HiveQl$.parseSql(HiveQl.scala:221)
+[info]   at org.apache.spark.sql.hive.test.TestHiveContext$HiveQLQueryExecution.logical$lzycompute(TestHive.scala:143)
+[info]   at org.apache.spark.sql.hive.test.TestHiveContext$HiveQLQueryExecution.logical(TestHive.scala:143)
+[info]   at org.apache.spark.sql.hive.test.TestHiveContext$QueryExecution.analyzed$lzycompute(TestHive.scala:153)
+[info]   at org.apache.spark.sql.hive.test.TestHiveContext$QueryExecution.analyzed(TestHive.scala:152)
+[info]   at org.apache.spark.sql.SQLContext$QueryExecution.optimizedPlan$lzycompute(SQLContext.scala:403)
+[info]   at org.apache.spark.sql.SQLContext$QueryExecution.optimizedPlan(SQLContext.scala:403)
+[info]   at org.apache.spark.sql.SQLContext$QueryExecution.sparkPlan$lzycompute(SQLContext.scala:407)
+[info]   at org.apache.spark.sql.SQLContext$QueryExecution.sparkPlan(SQLContext.scala:405)
+[info]   at org.apache.spark.sql.SQLContext$QueryExecution.executedPlan$lzycompute(SQLContext.scala:411)
+[info]   ...
+[info]   Cause: java.lang.NullPointerException:
+[info]   at org.apache.hadoop.hive.conf.HiveConf.getVar(HiveConf.java:1295)
+[info]   at org.apache.hadoop.hive.ql.parse.HiveLexer.allowQuotedId(HiveLexer.java:342)
+[info]   at org.apache.hadoop.hive.ql.parse.HiveLexer$DFA21.specialStateTransition(HiveLexer.java:10945)
+[info]   at org.antlr.runtime.DFA.predict(DFA.java:80)
+[info]   at org.apache.hadoop.hive.ql.parse.HiveLexer.mIdentifier(HiveLexer.java:7925)
+[info]   at org.apache.hadoop.hive.ql.parse.HiveLexer.mTokens(HiveLexer.java:10818)
+[info]   at org.antlr.runtime.Lexer.nextToken(Lexer.java:89)
+[info]   at org.antlr.runtime.BufferedTokenStream.fetch(BufferedTokenStream.java:133)
+[info]   at org.antlr.runtime.BufferedTokenStream.sync(BufferedTokenStream.java:127)
+[info]   at org.antlr.runtime.CommonTokenStream.consume(CommonTokenStream.java:70)
+
+[info] - auto_join_reordering_values *** FAILED ***
+[info]   org.apache.spark.sql.hive.HiveQl$ParseException: Failed to parse: -- HIVE-5056 RS has expression list for values, but it's ignored in MapJoinProcessor
+[info]
+[info] create table testsrc ( `key` int,`val` string)
+[info]   at org.apache.spark.sql.hive.HiveQl$.parseSql(HiveQl.scala:221)
+[info]   at org.apache.spark.sql.hive.test.TestHiveContext$HiveQLQueryExecution.logical$lzycompute(TestHive.scala:143)
+[info]   at org.apache.spark.sql.hive.test.TestHiveContext$HiveQLQueryExecution.logical(TestHive.scala:143)
+[info]   at org.apache.spark.sql.hive.test.TestHiveContext$QueryExecution.analyzed$lzycompute(TestHive.scala:153)
+[info]   at org.apache.spark.sql.hive.test.TestHiveContext$QueryExecution.analyzed(TestHive.scala:152)
+[info]   at org.apache.spark.sql.SQLContext$QueryExecution.optimizedPlan$lzycompute(SQLContext.scala:403)
+[info]   at org.apache.spark.sql.SQLContext$QueryExecution.optimizedPlan(SQLContext.scala:403)
+[info]   at org.apache.spark.sql.SQLContext$QueryExecution.sparkPlan$lzycompute(SQLContext.scala:407)
+[info]   at org.apache.spark.sql.SQLContext$QueryExecution.sparkPlan(SQLContext.scala:405)
+[info]   at org.apache.spark.sql.SQLContext$QueryExecution.executedPlan$lzycompute(SQLContext.scala:411)
+[info]   ...
+[info]   Cause: java.lang.NullPointerException:

@@ -84,3 +84,5 @@ org.apache.hadoop.hive.serde2.objectinspector.primitive.JavaBooleanObjectInspect
 两种可能性
 a put没有成功
 b 多线程导致？
+
+定位问题，多sc导致的，将broadcast放到bc1中却到bc2中去拿
