@@ -1,2 +1,71 @@
  1 !ShimLoader.getHadoopShims.usesJobShell() 没有必要
  2 ShimLoader.getHadoopShims().isSecurityEnabled() 判断后再进行认证判断
+ 3
+
+ In #2241 hive-thriftserver is not enabled. This patch enable hive-thriftserver to support hive-0.13.1 by using a shim layer refer to #2241.
+
+ 1 A light shim layer(code in sql/hive-thriftserver/hive-version) for each different hive version to handle api compatibility
+
+ 2 New pom profiles "hive-default" and "hive-versions"(copy from #2241) to activate different hive version
+
+ 3 SBT cmd for different version as follows:
+   hive-0.12.0 --- sbt/sbt -Phive,hadoop-2.3 assembly
+   hive-0.13.1 --- sbt/sbt -Phive,hadoop-2.3 -Dhive.version=0.13.1 assembly
+
+ 4 Since hive-thriftserver depend on hive subproject, this patch should be merged with #2241 to enable hive-0.13.1 for hive-thriftserver
+
+ Todo: do more test with @2241
+
+
+ shaded throw error:
+ Exception in thread "main" java.lang.ClassNotFoundException: com.google.protobuf_spark.GeneratedMessage
+ 	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+ 	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+ 	at java.security.AccessController.doPrivileged(Native Method)
+ 	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+ 	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+ 	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+ 	at java.lang.Class.forName0(Native Method)
+ 	at java.lang.Class.forName(Class.java:270)
+ 	at akka.actor.ReflectiveDynamicAccess$$anonfun$getClassFor$1.apply(DynamicAccess.scala:67)
+ 	at akka.actor.ReflectiveDynamicAccess$$anonfun$getClassFor$1.apply(DynamicAccess.scala:66)
+ 	at scala.util.Try$.apply(Try.scala:161)
+ 	at akka.actor.ReflectiveDynamicAccess.getClassFor(DynamicAccess.scala:66)
+ 	at akka.serialization.Serialization$$anonfun$6.apply(Serialization.scala:181)
+ 	at akka.serialization.Serialization$$anonfun$6.apply(Serialization.scala:181)
+ 	at scala.collection.TraversableLike$WithFilter$$anonfun$map$2.apply(TraversableLike.scala:722)
+ 	at scala.collection.immutable.HashMap$HashMap1.foreach(HashMap.scala:224)
+ 	at scala.collection.immutable.HashMap$HashTrieMap.foreach(HashMap.scala:403)
+ 	at scala.collection.TraversableLike$WithFilter.map(TraversableLike.scala:721)
+ 	at akka.serialization.Serialization.<init>(Serialization.scala:181)
+ 	at akka.serialization.SerializationExtension$.createExtension(SerializationExtension.scala:15)
+ 	at akka.serialization.SerializationExtension$.createExtension(SerializationExtension.scala:12)
+ 	at akka.actor.ActorSystemImpl.registerExtension(ActorSystem.scala:654)
+ 	at akka.actor.ExtensionId$class.apply(Extension.scala:79)
+ 	at akka.serialization.SerializationExtension$.apply(SerializationExtension.scala:12)
+ 	at akka.remote.RemoteActorRefProvider.init(RemoteActorRefProvider.scala:175)
+ 	at akka.actor.ActorSystemImpl._start$lzycompute(ActorSystem.scala:579)
+ 	at akka.actor.ActorSystemImpl._start(ActorSystem.scala:577)
+ 	at akka.actor.ActorSystemImpl.start(ActorSystem.scala:588)
+ 	at akka.actor.ActorSystem$.apply(ActorSystem.scala:111)
+ 	at akka.actor.ActorSystem$.apply(ActorSystem.scala:104)
+ 	at org.apache.spark.util.AkkaUtils$.org$apache$spark$util$AkkaUtils$$doCreateActorSystem(AkkaUtils.scala:121)
+ 	at org.apache.spark.util.AkkaUtils$$anonfun$1.apply(AkkaUtils.scala:54)
+ 	at org.apache.spark.util.AkkaUtils$$anonfun$1.apply(AkkaUtils.scala:53)
+ 	at org.apache.spark.util.Utils$$anonfun$startServiceOnPort$1.apply$mcVI$sp(Utils.scala:1454)
+ 	at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:141)
+ 	at org.apache.spark.util.Utils$.startServiceOnPort(Utils.scala:1445)
+ 	at org.apache.spark.util.AkkaUtils$.createActorSystem(AkkaUtils.scala:56)
+ 	at org.apache.spark.SparkEnv$.create(SparkEnv.scala:164)
+ 	at org.apache.spark.SparkContext.<init>(SparkContext.scala:213)
+ 	at org.apache.spark.sql.hive.thriftserver.SparkSQLEnv$.init(SparkSQLEnv.scala:36)
+ 	at org.apache.spark.sql.hive.thriftserver.HiveThriftServer2$.main(HiveThriftServer2.scala:70)
+ 	at org.apache.spark.sql.hive.thriftserver.HiveThriftServer2.main(HiveThriftServer2.scala)
+ 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+ 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ 	at java.lang.reflect.Method.invoke(Method.java:606)
+ 	at org.apache.spark.deploy.SparkSubmit$.launch(SparkSubmit.scala:335)
+ 	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:75)
+ 	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+ kf@kf:/home/wf/code/spark1$ ps -ef | grep spark

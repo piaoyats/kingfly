@@ -1,0 +1,16 @@
+1 clisuite
+Exception in thread "Thread-6" java.lang.IndexOutOfBoundsException: 6
+	at scala.collection.mutable.ResizableArray$class.apply(ResizableArray.scala:43)
+	at scala.collection.mutable.ArrayBuffer.apply(ArrayBuffer.scala:47)
+	at org.apache.spark.sql.hive.thriftserver.CliSuite.org$apache$spark$sql$hive$thriftserver$CliSuite$$captureOutput$1(CliSuite.scala:67)
+	at org.apache.spark.sql.hive.thriftserver.CliSuite$$anonfun$4.apply(CliSuite.scala:78)
+	at org.apache.spark.sql.hive.thriftserver.CliSuite$$anonfun$4.apply(CliSuite.scala:78)
+	at scala.sys.process.ProcessLogger$$anon$1.out(ProcessLogger.scala:96)
+	at scala.sys.process.BasicIO$$anonfun$processOutFully$1.apply(BasicIO.scala:135)
+	at scala.sys.process.BasicIO$$anonfun$processOutFully$1.apply(BasicIO.scala:135)
+	at scala.sys.process.BasicIO$.readFully$1(BasicIO.scala:175)
+	at scala.sys.process.BasicIO$.processLinesFully(BasicIO.scala:179)
+	at scala.sys.process.BasicIO$$anonfun$processFully$1.apply(BasicIO.scala:164)
+	at scala.sys.process.BasicIO$$anonfun$processFully$1.apply(BasicIO.scala:162)
+	at scala.sys.process.ProcessBuilderImpl$Simple$$anonfun$3.apply$mcV$sp(ProcessBuilderImpl.scala:73)
+	at scala.sys.process.ProcessImpl$Spawn$$anon$1.run(ProcessImpl.scala:22)
