@@ -1,0 +1,3 @@
+1 什么时候会触发TaskSchedulerImpl的resourceOffers？
+  有任务提交，有executor注册，有资源更新，有任务失败，（但从打印信息来看每隔指定时间间隔就会，有一个定时机制在这里？）
+2   
