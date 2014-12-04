@@ -1,3 +1,52 @@
 1 什么时候会触发TaskSchedulerImpl的resourceOffers？
   有任务提交，有executor注册，有资源更新，有任务失败，（但从打印信息来看每隔指定时间间隔就会，有一个定时机制在这里？）
-2   
+  
+2 如何debug spark
+  bin/spark-submit --class org.apache.spark.examples.SparkPi --master local --driver-java-options '-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765' examples/target/scala-2.10/spark-examples-1.1.0-SNAPSHOT-hadoop1.0.4.jar 50 
+
+3 在for循环中对RDD进行操作，那么RDD的操作中会用到的参数需要在for循环里面声明。
+如：
+val zone: Zone = new Zone(…);
+ val arrive: Boolean = …
+for (…)
+{
+     …
+     val timesInOneDay: Int = rddDataInTimeSegment.map(line => imsiMapper(line))
+                .groupByKey()
+                .map(records => getTimesOfOneUser(records, zone, arrive))
+                .reduce(_ + _);
+       …
+ };
+这样使用会在红色的代码处抛出异常：
+java.lang.IllegalArgumentException: argument type mismatch
+注意：单机情况下不会出现这种情况，集群模式才会，原因待分析。
+将代码改为：
+for (…)
+{
+     …
+val zone: Zone = new Zone(…);
+ val arrive: Boolean = …
+
+     val timesInOneDay: Int = rddDataInTimeSegment.map(line => imsiMapper(line))
+                .groupByKey()
+                .map(records => getTimesOfOneUser(records, zone, arrive))
+                .reduce(_ + _);
+       …
+ };
+程序在单机和集群模式下均能正常运行。
+
+中间还尝试过将zone和arrive这两个变量设为全局变量，红色代码改为
+.map(records => getTimesOfOneUser(records))
+这样在单机模式下也没有问题，但是在集群模式下在getTimesOfOneUser函数中使用zone的代码处会抛出空指针异常。zone的声明如下：
+private var zone: Zone = _;
+在main函数中使用zone之前会对其赋值，但是赋值不起作用。原因待分析。
+
+4 spark-local-20130923113506-9bc3/15/shuffle_0_123_98这些文件是溢出文件还是其他什么东东，这些数字又是什么含义？
+数据在内存中无法存放（MemoryStore）时，会写入本地磁盘（DiskStore）。Shuffle数据
+必定会写入磁盘。
+数字含义：第一个数字是该shuffle RDD的ID，第二个是父RDD的partition序号，第三个
+是reduceID，对应于该shuffle RDD的partition的序号。
+
+5 
+
+
