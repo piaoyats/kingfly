@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/kingfly.iml" filepath="$PROJECT_DIR$/.idea/kingfly.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala/scala.iml" filepath="$PROJECT_DIR$/scala/scala.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scala/scala.iml" filepath="$PROJECT_DIR$/scala/scala.iml" />
       <module fileurl="file://$PROJECT_DIR$/sparksql/sparksql.iml" filepath="$PROJECT_DIR$/sparksql/sparksql.iml" />
     </modules>
   </component>
