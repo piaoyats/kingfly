@@ -47,6 +47,31 @@ private var zone: Zone = _;
 数字含义：第一个数字是该shuffle RDD的ID，第二个是父RDD的partition序号，第三个
 是reduceID，对应于该shuffle RDD的partition的序号。
 
-5 
+5 Connection manager的作用
+  ConnectionManager 在启动时会启动一个selectorThread线程，该线程主要负责通过NIO接收或发送数据，接收和发送分别对应sendingConnection和ReadingConnection。
+
+6 shuffled rdd fetch过程是怎样的
+6.1 通过shufflemanager 获取reader，（shuffle handle）
+6.2 具体fetch时，通过BlockStoreShuffleFetcher去fetch
+6.3 而BlockStoreShuffleFetcher上实际是通过ShuffleBlockFetcherIterator来获取数据的，这个获取回来进行一个解包得到最后的iter
+6.4 ShuffleBlockFetcherIterator是一个(BlockID, values)的迭代器，获取数据需要如下信息：
+  1） blockmanager
+  2） blocksByAddress
+  3） blockTransferService
+  4） 序列化器
+  5） 一个重要的配置项spark.reducer.maxMbInFlight
+  
+  官方的解释
+  spark.reducer.maxMbInFlight	48	
+  Maximum size (in megabytes) of map outputs to fetch simultaneously from each reduce task. 
+  Since each output requires us to create a buffer to receive it, this represents a fixed 
+  memory overhead per reduce task, so keep it small unless you have a large amount of memory.
+  
+  在ShuffleBlockFetcherIterator中
+  1） hasNext很好确定只要已经处理的blocks数目没有达到需要fetch的block数目就是true
+  2） 内部维护一个fetch result队列，这个队列在 发送远程/本地 fetch请求且等待fetch成功后 将数据流添加到 到这个队列
+  3） 内部维护一个bytesInFlight变量，每次发送一个fetch请求时，就将本次请求要fetch的数据大小添加到该值，等着吃fetch的数据得到并被消费后再减掉，也就是说最后这个值一定为0，否则fetch失败
+  4） next中有一个根据maxMbInFlight来判断是否发送fetch请求的逻辑：只有在fetchRequests不为空且即将fetch的数据加上bytesInFlight不超过maxMbInFlight才会发送fetch请求
+
 
 
