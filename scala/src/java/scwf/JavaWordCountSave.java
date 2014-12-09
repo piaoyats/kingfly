@@ -1,3 +1,6 @@
+package scwf;
+
+import org.apache.spark.api.java.function.Function;
 import scala.Tuple2;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -11,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
 public class JavaWordCountSave {
-    private static final Pattern SPACE = Pattern.compile(" ");
+    private static final Pattern SPACE = Pattern.compile("\\|");
 
     public static void main(String[] args) throws Exception {
 
@@ -45,10 +48,13 @@ public class JavaWordCountSave {
             }
         });
 
-        List<Tuple2<String, Integer>> output = counts.collect();
-        for (Tuple2<?,?> tuple : output) {
-            System.out.println(tuple._1() + ": " + tuple._2());
-        }
+        counts.map(new Function<Tuple2<String, Integer>, String>() {
+            @Override
+            public String call(Tuple2<String, Integer> t) {
+                return t._1() + ": " + t._2();
+            }
+        }).saveAsTextFile(args[1]);
+
         ctx.stop();
     }
 }
