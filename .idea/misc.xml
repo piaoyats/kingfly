@@ -8,6 +8,7 @@
       <list>
         <option value="$PROJECT_DIR$/sparksql/pom.xml" />
         <option value="$PROJECT_DIR$/scala/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
