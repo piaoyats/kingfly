@@ -96,4 +96,51 @@ private var zone: Zone = _;
   fetcher.shutdown()
 
 10 blockId 和真实的block数据是怎么对应上的？为什么shuffle fetch的时候是通过 ShuffleBlockId(shuffleId, s._1, reduceId) 组装出来的？
+   首先通过MapOutputTracker获取要到每个节点fetch的output size,待续
+   /**
+      * Called from executors to get the server URIs and output sizes of the map outputs of
+      * a given shuffle.
+      */
+     def getServerStatuses(shuffleId: Int, reduceId: Int): Array[(BlockManagerId, Long)] = {
+
+11 MapOutputTracker 原理解析？
+   顾名思义，主要用于追踪map task的output location，由于driver 和 executor（PR） 使用不同的map存储元数据，所以对应driver和executor，分别有两个实现。
+   这里有一个很重要的概念：MapStatus(也是一个接口)，是shufflemaptask的输出，用于描述这个任务在哪个blockmanager 上执行，且可以获得该task吐出给指定reduce 的数据大小，视为一个block。
+   MapOutputTracker 在哪初始化的？ SparkENV里面初始化的
+   MapOutputTracker 在哪里用的？ master 侧的在DAGScheduler用的，是在任务执行完成时调用,handleTaskCompletion,注意这里是在一个stage的tasks执行完了后一下加到tracker的。
+   当中task执行完成是加到stage 的 outputLocs(= Array.fill[List[MapStatus]](numPartitions)(Nil)); executor 端: executor的shufflemaptask 的返回是直接通过statusUpdate发送到driver端的.
+   shuffleRDD 获取每个redueceId的数据时，在BlockStoreShuffleFetcher通过tracker获取别的executor的reduce数据：val statuses = SparkEnv.get.mapOutputTracker.getServerStatuses(shuffleId, reduceId).
+   其实getServerStatuses方法，首先在自己节点的mapStatuses查找，没有的话到driver端去拿，通过actor，也就是说mapStatuses是汇总维护在master处的，这里是否可以改？
+
+12 fetch 失败后的逻辑？
+   DAG中会标识这个stage 已失败，且标记这个executor失败并移除.这里的todo，允许一个executor fetch 失败多次。
+   这里有两个疑问：
+   12.1 handleExecutorLost of DAGScheduler 中的
+         if (!env.blockManager.externalShuffleServiceEnabled || fetchFailed) {
+           // TODO: This will be really slow if we keep accumulating shuffle map stages
+           for ((shuffleId, stage) <- shuffleToMapStage) {
+             stage.removeOutputsOnExecutor(execId)
+             val locs = stage.outputLocs.map(list => if (list.isEmpty) null else list.head).toArray  // 为什么是head？
+             mapOutputTracker.registerMapOutputs(shuffleId, locs, changeEpoch = true)
+           }
+   12.2  removeOutputsOnExecutor of Stage
+      for (partition <- 0 until numPartitions) {
+         val prevList = outputLocs(partition)
+         val newList = prevList.filterNot(_.location.executorId == execId)
+         outputLocs(partition) = newList
+         if (prevList != Nil && newList == Nil) { // 这个判断用来干嘛
+           becameUnavailable = true
+           numAvailableOutputs -= 1
+         }
+       }
+
+13 每个executor tracker 拿到 MapStatus 后，是如何转换为一个 Array[(BlockManagerId, Long)] ?
+   status => (status.location, status.getSizeForBlock(reduceId)), 所以这里也进一步明确block的概念就是一个task针对一个reduce的输出， 即 mapid and reduceid --- 对应一个block
+
+
+
+
+
+
+
 
