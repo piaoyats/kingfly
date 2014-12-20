@@ -24,9 +24,9 @@ object StudySqlParser {
     val plan2 = analyzer(plan1)
     println(plan2)
 
-    val optimizer = Optimizer
-    val plan3 = optimizer(plan2)
-    println(plan3)
+//    val optimizer = Optimizer
+//    val plan3 = optimizer(plan2)
+//    println(plan3)
 
   }
 
