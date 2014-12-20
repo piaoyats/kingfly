@@ -20,13 +20,13 @@ object OrcTest {
     prop.setProperty("columns.types", "int:string")
     @transient lazy val serde = initSerde(prop) // 为什么加上 lazy 可以解决序列化的问题？
     // 只要加了这句就会报序列化问题
-    val soi = serde.getObjectInspector().asInstanceOf[StructObjectInspector]
+//    val soi = serde.getObjectInspector().asInstanceOf[StructObjectInspector]
 
     val sparkContext = new SparkContext(new SparkConf().setMaster("local").setAppName("orcTest"))
     val inputClass = classOf[OrcNewInputFormat].asInstanceOf[Class[_ <: InputFormat[NullWritable, OrcStruct]]]
     val job = new Job(sparkContext.hadoopConfiguration)
     val conf: Configuration = job.getConfiguration
-    val path = new Path("/user/hive/warehouse/src_orc/")
+    val path = new Path("./sparksql/src/main/resource/src_orc/")
     org.apache.hadoop.mapreduce.lib.input.FileInputFormat.setInputPaths(job, path)
 
     new org.apache.spark.rdd.NewHadoopRDD(
