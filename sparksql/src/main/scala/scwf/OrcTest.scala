@@ -18,7 +18,7 @@ object OrcTest {
     val prop: Properties = new Properties
     prop.setProperty("columns", "key,value")
     prop.setProperty("columns.types", "int:string")
-    @transient lazy val serde = initSerde(prop) // 为什么加上 lazy 可以解决序列化的问题？
+    @transient lazy val serde = initSerde(prop) // 为什么加上 lazy 可以解决序列化的问题？??
     // 只要加了这句就会报序列化问题
 //    val soi = serde.getObjectInspector().asInstanceOf[StructObjectInspector]
 
