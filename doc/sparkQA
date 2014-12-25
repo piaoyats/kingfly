@@ -139,6 +139,9 @@ private var zone: Zone = _;
 
 14 如何调试序列化问题
    添加 -Dsun.io.serialization.extendedDebugInfo=true
+   
+15 如何使得rdd saveastextfile时覆盖已有的目录
+   设置 spark.hadoop.validateOutputSpecs = false
 
 
 
