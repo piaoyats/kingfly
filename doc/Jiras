@@ -10,3 +10,7 @@ SPARK-4243 Spark SQL SELECT COUNT DISTINCT optimization
 SPARK-4235 Add union data type support
 SPARK-4234 Always do paritial aggregation
 SPARK-3617 Configurable case sensitivity
+SPARK-1369 HiveUDF wrappers are slow
+SPARK-2068 Remove other uses of @transient lazy val in physical plan nodes
+SPARK-4366 Aggregation Optimization
+SPARK-4629 Spark SQL uses Hadoop Configuration in a thread-unsafe manner when writing Parquet files
