@@ -1,0 +1,37 @@
+Symbols, Trees, and Types
+1 神码是symbols？
+  symbol用于将名字和该名字对应scala中的实物绑定在一起，scala中任何一个你可以定义和命名的都有一个对应的symbol。
+  symbol包含实物（class，object，trait，val，var，def）声明时的所有信息，是一个完整的抽象
+  symbol按照层级化组织，即一个方法的参数对应的symbol属于该方法对应的symbol，如果一个symbol没有父亲，则自动归于一个NoSymbol（单例）
+
+2 什么是TypeSymbol？
+  用于表示class trait type的simbol， 有一些比较有意思的方法，如isFinal, isPrivate, isProtected, isAbstractClass, etc.
+  ClassSymbol: Provides access to all information contained in a class or trait declaration, e.g., name, modifiers (isFinal, isPrivate, isProtected, isAbstractClass, etc.), baseClasses, and typeParams.
+
+3 神码是TermSymbol？
+  用于表示 val, var, def
+  MethodSymbol: The type of method symbols representing def declarations (subclass of TermSymbol). It supports queries like checking whether a method is a (primary) constructor, or whether a method supports variable-length argument lists.
+  ModuleSymbol: The type of module symbols representing object declarations. It allows looking up the class implicitly associated with the object definition via member moduleClass. The opposite look up is also possible. One can go back from a module class to the associated module symbol by inspecting its selfType.termSymbol.
+
+4 神码是Free symbols？
+  The two symbol types FreeTermSymbol and FreeTypeSymbol have a special status, in the sense that they refer to symbols whose available information is not complete.
+
+5 神码是type？
+  顾名思义，指相应symbol的类型信息
+
+6 如何实例化type
+In general, there are three ways to instantiate a Type.
+6.1 via method typeOf on scala.reflect.api.TypeTags, which is mixed into Universe (simplest and most common).
+6.2 Standard Types, such as Int, Boolean, Any, or Unit are accessible through the available universe.
+6.3 Manual instantiation using factory methods such as typeRef or polyType on scala.reflect.api.Types, (not recommended).
+
+7 type有哪些操作呢？
+7.1 Checking the subtyping relationship between two types. 比如 typeOf[A] <:< typeOf[B]
+7.2 Checking for equality between two types. 比如 getType(a1) =:= getType(a2)
+7.3 Querying a given type for certain members or inner types. For example, to look up the map method of List, one can do: `typeOf[List[_]].member("map": TermName)`
+再比如 typeOf[List[Int]].members.filter(_.isPrivate).foreach(println _)
+
+8  weak_<:<  和 <:< 的区别是神码？
+ weak_<:< 是弱一致性，主要用于numeric types.
+ In some situations Scala uses a more general conformance relation. A type S weakly conforms to a type T, written S <:w T, if S<:T or both S and T are primitive number types and S precedes T in the following ordering:
+ Weak Conformance Relations | ————————— | Byte <:w Short | | Short <:w Int | | Char <:w Int | | Int <:w Long | | Long <:w Float | | Float <:w Double |
