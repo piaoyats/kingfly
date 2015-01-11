@@ -35,3 +35,13 @@ In general, there are three ways to instantiate a Type.
  weak_<:< 是弱一致性，主要用于numeric types.
  In some situations Scala uses a more general conformance relation. A type S weakly conforms to a type T, written S <:w T, if S<:T or both S and T are primitive number types and S precedes T in the following ordering:
  Weak Conformance Relations | ————————— | Byte <:w Short | | Short <:w Int | | Char <:w Int | | Int <:w Long | | Long <:w Float | | Float <:w Double |
+
+9 scala的tree是语法树吧？
+ Trees are the basis of Scala’s abstract syntax which is used to represent programs. They are also called abstract syntax trees and commonly abbreviated as ASTs.
+
+10 在scala中有哪几种方法操作语法树
+ Scala annotations, which use trees to represent their arguments, exposed in Annotation.scalaArgs (for more, see the Annotations section of this guide).
+ reify, a special method that takes an expression and returns an AST that represents this expression.
+ Compile-time reflection with macros (outlined in the Macros guide) and runtime compilation with toolboxes both use trees as their program representation medium.
+
+ tree 是不可变的，pos (Position), symbol (Symbol), and tpe (Type) 例外，这三个在typechecked的时候赋值
