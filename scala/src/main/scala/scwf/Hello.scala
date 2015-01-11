@@ -9,6 +9,9 @@ import org.apache.spark.util.Utils
  */
 object Hello {
   def main(args: Array[String]) {
+    import scwf.scalaMacro._
+    printf("hello %s!", "world")
+
     import scala.concurrent._
     //    import ExecutionContext.Implicits.global
     implicit val futureExecContext: ExecutionContext =  ExecutionContext.fromExecutor(
