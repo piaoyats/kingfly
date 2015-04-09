@@ -1,0 +1,15 @@
+窗口函数实现
+
+hive ql实现分析
+解析过程 ######
+hiveql中添加如下逻辑
+1 收集Window，注意在hiveql 里面收集的是 string -> Seq[ASTNode]
+2 收集到的window 主要是在解析 Windowspec时使用，因为Seq[ASTNode] -> WindowSpec过程中前者（Seq[ASTNode]）可能引用别的窗口，所以这里需要做一个替换
+  substituteWindowSpec(windowSpec) windowSpec是Seq[ASTNode]的类型，替换的逻辑为：
+  2.1 如果windowSpec 仅引用别的窗口名字，则直接从map中get结果即可
+  2.2 如果windowSpec 中除了引用别的窗口名字，也提供了部分窗口属性（frame）， 则将frame添加到前面定义的窗口上
+  
+  而 Seq[ASTNode] -> WindowSpec 的解析过程是： 从Seq[ASTNode]中找出 orderByClause :: sortByClause :: distributeByClause :: clusterByClause 
+3 在nodeToExpr中添加解析 WindowAttribute 的逻辑，具体过程如下 
+  3.1 如果是count + Windows：发现Node是 COUNT 后加 TOK_WINDOWSPEC的情形则 解析为 WindowAttribute，这里就会进一步调用第二的 Seq[ASTNode] -> WindowSpec 过程
+  3.2 如果是function + Windows：发现是 node 是 function 后加 TOK_WINDOWSPEC 的情形则，则解析相应的 function
