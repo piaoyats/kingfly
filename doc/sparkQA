@@ -2,7 +2,11 @@
   有任务提交，有executor注册，有资源更新，有任务失败，（但从打印信息来看每隔指定时间间隔就会，有一个定时机制在这里？）
   
 2 如何debug spark
-  bin/spark-submit --class org.apache.spark.examples.SparkPi --master local --driver-java-options '-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765' examples/target/scala-2.10/spark-examples-1.1.0-SNAPSHOT-hadoop1.0.4.jar 50 
+  bin/spark-submit 
+  --class org.apache.spark.examples.SparkPi 
+  --master local 
+  --driver-java-options '-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765' 
+  examples/target/scala-2.10/spark-examples-1.1.0-SNAPSHOT-hadoop1.0.4.jar 50 
 
 3 在for循环中对RDD进行操作，那么RDD的操作中会用到的参数需要在for循环里面声明。
 如：
