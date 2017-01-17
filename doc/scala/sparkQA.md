@@ -1,14 +1,16 @@
-1 什么时候会触发TaskSchedulerImpl的resourceOffers？
+#QAs for refer
+
+## 什么时候会触发TaskSchedulerImpl的resourceOffers？
   有任务提交，有executor注册，有资源更新，有任务失败，（但从打印信息来看每隔指定时间间隔就会，有一个定时机制在这里？）
   
-2 如何debug spark
+## 如何debug spark
   bin/spark-submit 
   --class org.apache.spark.examples.SparkPi 
   --master local 
   --driver-java-options '-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765' 
   examples/target/scala-2.10/spark-examples-1.1.0-SNAPSHOT-hadoop1.0.4.jar 50 
 
-3 在for循环中对RDD进行操作，那么RDD的操作中会用到的参数需要在for循环里面声明。
+## 在for循环中对RDD进行操作，那么RDD的操作中会用到的参数需要在for循环里面声明。
 如：
   val zone: Zone = new Zone(…);
    val arrive: Boolean = …
@@ -46,24 +48,19 @@
   private var zone: Zone = _;
   在main函数中使用zone之前会对其赋值，但是赋值不起作用。原因待分析。
 
-4 spark-local-20130923113506-9bc3/15/shuffle_0_123_98这些文件是溢出文件还是其他什么东东，这些数字又是什么含义？
-  数据在内存中无法存放（MemoryStore）时，会写入本地磁盘（DiskStore）。Shuffle数据
-  必定会写入磁盘。
+## spark-local-20130923113506-9bc3/15/shuffle_0_123_98这些文件是溢出文件还是其他什么东东，这些数字又是什么含义？
+  数据在内存中无法存放（MemoryStore）时，会写入本地磁盘（DiskStore）。Shuffle数据必定会写入磁盘。
   数字含义：第一个数字是该shuffle RDD的ID，第二个是父RDD的partition序号，第三个
   是reduceID，对应于该shuffle RDD的partition的序号。
 
-5 Connection manager的作用
-  ConnectionManager 在启动时会启动一个selectorThread线程，该线程主要负责通过NIO接收或发送数据，
-  接收和发送分别对应sendingConnection和ReadingConnection。
-
-6 shuffled rdd fetch过程是怎样的
-6.1 通过shufflemanager 获取reader，（shuffle handler）
-6.2 具体fetch时，通过BlockStoreShuffleFetcher去fetch
-6.3 而BlockStoreShuffleFetcher上实际是通过ShuffleBlockFetcherIterator来获取数据的，这个获取回来进行一个解包得到最后的iter.
+## shuffled rdd fetch过程是怎样的
+通过shufflemanager 获取reader，（shuffle handler）
+具体fetch时，通过BlockStoreShuffleFetcher去fetch
+而BlockStoreShuffleFetcher上实际是通过ShuffleBlockFetcherIterator来获取数据的，这个获取回来进行一个解包得到最后的iter.
     BlockStoreShuffleFetcher 根据shufflid，reduceid（shuffled rdd要计算的partition的index）来确定去哪些节点获取哪些block
     数据.具体是怎么确定去哪个节点拿哪些block是通过mapOutputTracker来实现的。 
     SparkEnv.get.mapOutputTracker.getServerStatuses(shuffleId, reduceId)
-6.4 ShuffleBlockFetcherIterator是一个(BlockID, values)的迭代器，获取数据需要如下信息：
+ShuffleBlockFetcherIterator是一个(BlockID, values)的迭代器，获取数据需要如下信息：
   1） blockmanager --- 本机的blockmanager, 用来读本地的block
   2） blocksByAddress: Seq[(BlockManagerId, Seq[(BlockId, Long)])] ---- 去哪些节点拿哪些blocks
   3） blockTransferService 或者 shuffleClient --- fetch 远端数据
@@ -85,13 +82,11 @@
   4） next中有一个根据maxMbInFlight来判断是否发送fetch请求的逻辑：只有在fetchRequests不为空且即将fetch的数据加上
   bytesInFlight不超过maxMbInFlight才会发送fetch请求
 
-7 ConnectionManager initial 和 accept 的连接数为什么是一样多？
-
-8 fetchrequest 是如何切的？
+## fetchrequest 是如何切的？
   根据spark.reducer.maxMbInFlight的配置值，比如配置50m，则除以5得到10M，则按10M来切fetch request。
   如有10个block，1：2，2：5，3：4...这将123的请求包装为一个request,这里的block是和什么对应？
 
-9 executor 启动是怎么获得driver端的配置的？
+## executor 启动是怎么获得driver端的配置的？
   通过akka来实现的，起一个专门获得配置的actor，获得后停掉，比较巧妙：
   // Bootstrap to fetch the driver's Spark properties.
   val executorConf = new SparkConf
@@ -105,7 +100,7 @@
           Seq[(String, String)](("spark.app.id", appId))
   fetcher.shutdown()
 
-10 blockId 和真实的block数据是怎么对应上的？为什么shuffle fetch的时候是通过 
+## blockId 和真实的block数据是怎么对应上的？为什么shuffle fetch的时候是通过 
    ShuffleBlockId(shuffleId, s._1, reduceId) 组装出来的？
    首先通过MapOutputTracker获取要到每个节点fetch的output size,待续
    /**
@@ -114,7 +109,7 @@
       */
      def getServerStatuses(shuffleId: Int, reduceId: Int): Array[(BlockManagerId, Long)] = {
 
-11 MapOutputTracker 原理解析？
+## MapOutputTracker 原理解析？
    顾名思义，主要用于追踪map task的output location，由于driver 和 executor（PR） 使用不同的map存储元数据，
    所以对应driver和executor，分别有两个实现。这里有一个很重要的概念：MapStatus(也是一个接口)，是
    shufflemaptask的输出，用于描述这个任务在哪个blockmanager 上执行，且可以获得该task吐出给指定reduce 的数据大小，
@@ -127,7 +122,7 @@
    其实getServerStatuses方法，首先在自己节点的mapStatuses查找，没有的话到driver端去拿，通过actor，
    也就是说mapStatuses是汇总维护在master处的，这里是否可以改？
 
-12 fetch 失败后的逻辑？
+## fetch 失败后的逻辑？
    DAG中会标识这个stage 已失败，且标记这个executor失败并移除.这里的todo，允许一个executor fetch 失败多次。
    这里有两个疑问：
    12.1 handleExecutorLost of DAGScheduler 中的
@@ -149,14 +144,14 @@
          }
        }
 
-13 每个executor tracker 拿到 MapStatus 后，是如何转换为一个 Array[(BlockManagerId, Long)] ?
+## 每个executor tracker 拿到 MapStatus 后，是如何转换为一个 Array[(BlockManagerId, Long)] ?
    status => (status.location, status.getSizeForBlock(reduceId)), 所以这里也进一步明确block的概念
    就是一个task针对一个reduce的输出， 即 mapid and reduceid --- 对应一个block
 
-14 如何调试序列化问题
+## 如何调试序列化问题
    添加 -Dsun.io.serialization.extendedDebugInfo=true
    
-15 如何使得rdd saveastextfile时覆盖已有的目录
+## 如何使得rdd saveastextfile时覆盖已有的目录
    设置 spark.hadoop.validateOutputSpecs = false
 
 
