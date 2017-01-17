@@ -1,0 +1,42 @@
+http://my.oschina.net/aiguozhe/blog/35202
+Scala 2.8提供包对象（package object）的新特性。什么是包对象呢？按我的理解，根据Scala“一切皆对象”设计哲学，
+包(package)也是一种对象。既然是对象，那么就应该有属性和方法，也可以在包对象内声明某个类型的别名。
+
+01	package  com{
+02	  package object ggd543{
+03	    type HashMap[A,B] = scala.collection.mutable.HashMap[A,B];
+04	    val HashMap =  scala.collection.mutable.HashMap
+05	    def print = println("hello, ggd543")
+06	  }
+07
+08	  package object aiguozhe{
+09	    var name = "aiguozhe"
+10	    def sayHello = println("hello")
+11	  }
+12
+13	}
+
+ 可以看到，定义包对象跟定义一个普通的伴随对象(companion object)在写法上的唯一区别就是在关键字object 前加上 package 。
+
+然后我们可以像使用伴随对象那样使用包对象，比如
+
+1	object Test extends Application{
+2	    val myMap: com.ggd543.HashMap[String,String]= null;
+3	    println(com.ggd543.HashMap)
+4	    println(com.ggd543.print);
+5	    println(com.aiguozhe.name)
+6	    com.aiguozhe.name = "AIGUOZHE"
+7	    println(com.aiguozhe.name)
+8	}
+
+如果包对象的作用仅仅限于伴随对象那样，那scala 2.8完全没有必要引入这种特性。
+实际上包对象最重要的用途是兼容旧的类库，或者为某些数据类型提供增强版本。
+
+比如在scala 2.7.7中，List是定义在scala包下的一个不可变集合类。
+这样做的目的是每次使用List的时候不需要显式地导入包名，因为List是一个使用很频繁的类。
+
+在Scala中，包java.lang，包scala和伴随对象Predef里的所有数据类型，属性和方法会被自动导入到每个Scala文件中
+
+然而另一方面，List由于具有不可变的特性，它应该归入scala.collection.immutable包中。
+因此在scala 2.8中，List被挪到scala.collection.immutable包下里，但这样一来2.8版本如何兼容2.7.7版本。
+于是Scala 2.8引入“包对象”这个特性来解决这个问题。如果你查阅Scala 2.8版本的API文档或源码，你会发现它定义了一个包对象:
