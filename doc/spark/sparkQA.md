@@ -164,9 +164,12 @@ ShuffleBlockFetcherIterator是一个(BlockID, values)的迭代器，获取数据
        }
 ```
 ## 每个executor tracker 拿到 MapStatus 后，是如何转换为一个 Array[(BlockManagerId, Long)] ?
-```status =&gt; (status.location, status.getSizeForBlock(reduceId)), 所以这里也进一步明确block的概念
+
+```
+status =&gt; (status.location, status.getSizeForBlock(reduceId)), 所以这里也进一步明确block的概念
    就是一个task针对一个reduce的输出， 即 mapid and reduceid --- 对应一个block
 ```
+
 ## 如何调试序列化问题
    添加 -Dsun.io.serialization.extendedDebugInfo=true
 
